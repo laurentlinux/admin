@@ -1,244 +1,498 @@
-# French translations for PACKAGE package.
+# English translations for PACKAGE package.
 # Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Alexis <translate@yunohost.org>, 2012.
+# Alexis <kload@kload.fr>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version: Yunohost Beta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-01 00:28+0200\n"
-"PO-Revision-Date: 2012-04-01 00:29+0100\n"
+"POT-Creation-Date: 2012-05-28 13:12+0200\n"
+"PO-Revision-Date: 2012-05-28 13:38+0100\n"
 "Last-Translator: Alexis Gavoty <alexis@gavoty.fr>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: views/layout.html.php:35
-#: views/layout.html.php:64
-msgid "Users"
-msgstr "Utilisateurs"
+#: config/config.php:100
+#: controllers/other.php:35
+msgid "You must identify yourself to access to this page."
+msgstr "Vous devez vous identifier pour accéder à cette page."
 
-#: views/layout.html.php:38
-#: views/layout.html.php:65
-msgid "Domains"
-msgstr "Domaines"
+#: config/config.php:135
+msgid "Please add a new user to complete setup."
+msgstr "Merci d'ajouter un nouvel utilisateur pour terminer l'installation."
 
-#: views/layout.html.php:41
-#: views/layout.html.php:66
-msgid "Applications"
-msgstr "Applications"
+#: controllers/app.php:65
+msgid "List of applications"
+msgstr "Liste des applications"
 
-#: views/layout.html.php:45
-#: views/layout.html.php:67
-msgid "Tools"
-msgstr "Outils"
+#: controllers/app.php:77
+#: controllers/app.php:97
+msgid "Invalid operation"
+msgstr "Opération invalide"
 
-#: views/layout.html.php:49
-msgid "System monitor"
-msgstr "Moniteur système"
+#: controllers/app.php:82
+#: views/listApps.html.php:47
+msgid "Install"
+msgstr "Installer"
 
-#: views/layout.html.php:50
-msgid "Yayaya"
-msgstr "Yayaya"
-
-#: views/layout.html.php:51
-msgid "Yoyoyo"
-msgstr "Yoyoyo"
-
-#: views/layout.html.php:77
-msgid "Error"
-msgstr "Erreur"
-
-#: views/layout.html.php:82
-msgid "Notice"
-msgstr "Note"
-
-#: views/layout.html.php:95
-msgid "Powered by"
-msgstr "Propulsé par"
-
-#: views/error_layout.html.php:5
-msgid "Page Not Found :("
-msgstr "Page introuvable :("
-
-#: views/error_layout.html.php:23
-msgid "Not found <span>:(</span>"
-msgstr "Page introuvable <span>:(</span>"
-
-#: views/error_layout.html.php:26
-msgid "Sorry, but the page you were trying to view does not exist."
-msgstr "Désolé, mais la page que vous cherchez à atteindre n'existe pas."
-
-#: views/error_layout.html.php:27
-msgid "It looks like this was the result of either:"
-msgstr "Cela peut être lié à:"
-
-#: views/error_layout.html.php:29
-msgid "a mistyped address"
-msgstr "une erreur dans l'adresse"
-
-#: views/error_layout.html.php:30
-msgid "an out-of-date link"
-msgstr "un lien non valable"
-
-#: views/error_layout.html.php:33
-msgid "Details:"
-msgstr "Détails:"
-
-#: views/list.html.php:14
-#: views/list.html.php:21
-msgid "Edit"
-msgstr "Éditer"
-
-#: views/list.html.php:22
-#: views/deleteUserForm.html.php:9
-#: controllers/admin.php:132
-msgid "Delete"
+#: controllers/app.php:87
+msgid "Remove"
 msgstr "Supprimer"
 
-#: views/list.html.php:30
-msgid "New user"
-msgstr "Nouvel utilisateur"
-
-#: views/updateUserForm.html.php:6
-#: views/addUserForm.html.php:4
-msgid "User informations"
-msgstr "Informations de l'utilisateur"
-
-#: views/updateUserForm.html.php:9
-#: views/addUserForm.html.php:16
-msgid "Username"
-msgstr "Nom d'utilisateur"
-
-#: views/updateUserForm.html.php:13
-#: views/addUserForm.html.php:28
-msgid "Firstname"
-msgstr "Prénom"
-
-#: views/updateUserForm.html.php:17
-#: views/addUserForm.html.php:32
-msgid "Lastname"
-msgstr "Nom"
-
-#: views/updateUserForm.html.php:21
-#: views/addUserForm.html.php:36
-msgid "Mail"
-msgstr "Email"
-
-#: views/updateUserForm.html.php:25
-msgid "Alias mail"
-msgstr "Email d'alias"
-
-#: views/updateUserForm.html.php:31
-#: views/addUserForm.html.php:48
-msgid "required fields"
-msgstr "champs obligatoires"
-
-#: views/updateUserForm.html.php:34
-#: controllers/admin.php:172
+#: controllers/app.php:92
+#: controllers/user.php:158
+#: views/listApps.html.php:43
+#: views/updateUserForm.html.php:76
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: views/deleteUserForm.html.php:6
+#: controllers/domain.php:37
+msgid "List of domains"
+msgstr "Liste des domaines"
+
+#: controllers/domain.php:72
+msgid "You must enter at least one domain."
+msgstr "Vous devez entrer au moins un domaine."
+
+#: controllers/domain.php:74
+msgid "A problem occured on domain operations."
+msgstr "Un problème est survenu lors des opérations sur les domaines."
+
+#: controllers/domain.php:75
+msgid "Domains succefully updated."
+msgstr "Domaines mis à jour avec succès."
+
+#: controllers/tools.php:43
+msgid "Log reader"
+msgstr "Lecteur de log"
+
+#: controllers/tools.php:54
+msgid "Chat"
+msgstr "Chat"
+
+#: controllers/tools.php:64
+msgid "The support chat has been enabled."
+msgstr "Le chat de support a été activé."
+
+#: controllers/tools.php:75
+msgid "The support chat has been disabled."
+msgstr "Le chat de support a été désactivé."
+
+#: controllers/tools.php:133
+#: views/layout.html.php:72
+msgid "System monitor"
+msgstr "Moniteur système"
+
+#: controllers/user.php:45
+msgid "List users"
+msgstr "Liste des utilisateurs"
+
+#: controllers/user.php:56
+msgid "Add user"
+msgstr "Ajouter un utilisateur"
+
+#: controllers/user.php:87
+msgid "User succefully created."
+msgstr "L'utilisateur a été créé avec succès."
+
+#: controllers/user.php:88
+msgid "Username:"
+msgstr "Nom d'utilisateur :"
+
+#: controllers/user.php:88
+msgid "Password:"
+msgstr "Mot de passe :"
+
+#: controllers/user.php:89
+msgid "Your account details"
+msgstr "Informations sur votre compte"
+
+#: controllers/user.php:92
+msgid "An error occured on user creation."
+msgstr "Une erreur est survenue lors de la création de l'utilisateur."
+
+#: controllers/user.php:94
+msgid "Passwords does not match"
+msgstr "Les mots de passe diffèrent"
+
+#: controllers/user.php:113
+#: views/deleteUserForm.html.php:31
+#: views/listUser.html.php:43
+msgid "Delete"
+msgstr "Supprimer"
+
+#: controllers/user.php:116
+msgid "This user doesn't exists."
+msgstr "Cet utilisateur n'existe pas."
+
+#: controllers/user.php:120
+msgid "No user set."
+msgstr "Aucun utilisateur renseigné."
+
+#: controllers/user.php:136
+msgid "User succefully deleted."
+msgstr "Utilisateur supprimé avec succès."
+
+#: controllers/user.php:138
+msgid "An error occured on user deletion."
+msgstr "Une erreur est survenue lors de la suppression de l'utilisateur."
+
+#: controllers/user.php:198
+msgid "User succefully updated."
+msgstr "Utilisateur mis à jour avec succès."
+
+#: controllers/user.php:200
+msgid "An error occured on user update."
+msgstr "Une erreur est survenue lors de la mise à jour de l'utilisateur."
+
+#: controllers/user.php:220
+msgid "Mail aliases of"
+msgstr "Alias email de"
+
+#: controllers/user.php:243
+msgid "Mail aliases updated."
+msgstr "Alias email mis à jour."
+
+#: controllers/user.php:245
+msgid "An error occured on aliases update."
+msgstr "Une erreur est survenue lors de la mise à jour des alias."
+
+#: controllers/user.php:259
+msgid "Change password of"
+msgstr "Changement de mot de passe de"
+
+#: controllers/user.php:282
+msgid "Password changed."
+msgstr "Mot de passe mis à jour."
+
+#: controllers/user.php:284
+msgid "An error occured on password update."
+msgstr "Une erreur est survenue lors de la mise à jour du mot de passe."
+
+#: controllers/user.php:288
+msgid "Actual password doesn't match"
+msgstr "Le mot de passe actuel est faux"
+
+#: views/addUserForm.html.php:25
+#: views/updateUserForm.html.php:27
+msgid "User informations"
+msgstr "Informations de l'utilisateur"
+
+#: views/addUserForm.html.php:28
+#: views/updateUserForm.html.php:30
+msgid "Domain"
+msgstr "Domaine"
+
+#: views/addUserForm.html.php:36
+#: views/updateUserForm.html.php:38
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: views/addUserForm.html.php:40
+msgid "Password"
+msgstr "Mot de passe"
+
+#: views/addUserForm.html.php:44
+msgid "Confirm password"
+msgstr "Confirmation"
+
+#: views/addUserForm.html.php:48
+#: views/updateUserForm.html.php:42
+msgid "Firstname"
+msgstr "Prénom"
+
+#: views/addUserForm.html.php:52
+#: views/updateUserForm.html.php:46
+msgid "Lastname"
+msgstr "Nom"
+
+#: views/addUserForm.html.php:56
+#: views/deleteUserForm.html.php:29
+#: views/updateUserForm.html.php:50
+msgid "Mail"
+msgstr "Email"
+
+#: views/addUserForm.html.php:61
+#: views/updateUserForm.html.php:55
+msgid "Administrator"
+msgstr "Administrateur"
+
+#: views/addUserForm.html.php:68
+#: views/passwordUserForm.html.php:43
+#: views/updateUserForm.html.php:73
+msgid "required fields"
+msgstr "champs requis"
+
+#: views/addUserForm.html.php:71
+msgid "Create"
+msgstr "Créer"
+
+#: views/appOperation.html.php:29
+msgid "Success !"
+msgstr "Succès !"
+
+#: views/appOperation.html.php:31
+msgid "Failed !"
+msgstr "Échec !"
+
+#: views/appOperation.html.php:34
+msgid "Back"
+msgstr "Retour"
+
+#: views/chat.html.php:25
+#: views/chat.html.php:33
+msgid "Statut"
+msgstr "Statut"
+
+#: views/chat.html.php:25
+msgid "Stopped"
+msgstr "Stoppé"
+
+#: views/chat.html.php:27
+msgid "Do you want to enable the support chat ?"
+msgstr "Voules-vous activer le chat de support ?"
+
+#: views/chat.html.php:29
+msgid "Enable chat"
+msgstr "Activer le chat"
+
+#: views/chat.html.php:30
+msgid "Enable"
+msgstr "Activer"
+
+#: views/chat.html.php:33
+msgid "Running"
+msgstr "En fonctionnement"
+
+#: views/chat.html.php:35
+msgid "Do you want to disable the support chat ?"
+msgstr "Voules-vous désactiver le chat de support ?"
+
+#: views/chat.html.php:37
+msgid "Disable chat"
+msgstr "Désactiver le chat"
+
+#: views/chat.html.php:38
+msgid "Disable"
+msgstr "Désactiver"
+
+#: views/deleteUserForm.html.php:26
 #, php-format
 msgid "Do you really want to delete %s ?"
 msgstr "Voulez-vous vraiment supprimer %s ?"
 
-#: views/addUserForm.html.php:7
-msgid "Domain"
-msgstr "Domaine"
+#: views/deleteUserForm.html.php:28
+#: views/listDomains.html.php:33
+#: views/listDomains.html.php:39
+msgid "Name"
+msgstr "Nom"
 
-#: views/addUserForm.html.php:20
-msgid "Password"
-msgstr "Mot de passe"
+#: views/error_layout.html.php:26
+msgid "Page Not Found :("
+msgstr "Page introuvable :("
 
-#: views/addUserForm.html.php:24
-msgid "Confirm password"
-msgstr "Confirmation"
+#: views/error_layout.html.php:44
+msgid "Not found <span>:(</span>"
+msgstr "Introuvable <span>:(</span>"
 
-#: views/addUserForm.html.php:41
-msgid "Administrator"
-msgstr "Administrateur"
+#: views/error_layout.html.php:47
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr "Désolé, mais la page que vous essayez d'atteindre n'existe pas."
 
-#: views/addUserForm.html.php:51
-msgid "Create"
-msgstr "Créer"
+#: views/error_layout.html.php:48
+msgid "It looks like this was the result of either:"
+msgstr "Cela peut être lié à:"
 
-#: index.php:102
-msgid "Please add a new user to complete setup."
-msgstr "Merci d'ajouter un nouvel utilisateur pour terminer l'installation."
+#: views/error_layout.html.php:50
+msgid "a mistyped address"
+msgstr "une erreur dans l'adresse"
 
-#: controllers/admin.php:46
-msgid "List users"
-msgstr "Liste des utilisateurs"
+#: views/error_layout.html.php:51
+msgid "an out-of-date link"
+msgstr "un lien obsolète"
 
-#: controllers/admin.php:57
-msgid "Add user"
-msgstr "Ajouter un utilisateur"
+#: views/error_layout.html.php:54
+msgid "Details:"
+msgstr "Détails:"
 
-#: controllers/admin.php:88
-msgid "This mail address already exists."
-msgstr "Cette adresse email existe déjà."
+#: views/layout.html.php:58
+#: views/layout.html.php:108
+msgid "Users"
+msgstr "Utilisateurs"
 
-#: controllers/admin.php:97
-msgid "This user already exists."
-msgstr "Cet utilisateur existe déjà."
+#: views/layout.html.php:61
+#: views/layout.html.php:109
+#: views/listDomains.html.php:30
+msgid "Domains"
+msgstr "Domaines"
 
-#: controllers/admin.php:110
-msgid "User succefully created."
-msgstr "L'utilisateur a été créé avec succès."
+#: views/layout.html.php:64
+#: views/layout.html.php:110
+msgid "Applications"
+msgstr "Applications"
 
-#: controllers/admin.php:113
-msgid "An error occured on user creation."
-msgstr "Une erreur est survenu lors de la création de l'utilisateur."
+#: views/layout.html.php:68
+#: views/layout.html.php:111
+msgid "Tools"
+msgstr "Outils"
 
-#: controllers/admin.php:114
-msgid "Invalid length or character."
-msgstr "Longueur ou caractère invalide."
+#: views/layout.html.php:73
+msgid "Support chat"
+msgstr "Chat de support"
 
-#: controllers/admin.php:115
-msgid "The email domain does not match the domain."
-msgstr "L'adresse email ne correspond pas au domaine."
+#: views/layout.html.php:78
+msgid "Log out"
+msgstr "Déconnexion"
 
-#: controllers/admin.php:116
-msgid "The email address is invalid."
-msgstr "L'adresse email est invalide."
+#: views/layout.html.php:91
+msgid "Congratulations !"
+msgstr "Félicitations !"
 
-#: controllers/admin.php:117
-msgid "The password confirmation is different from the first password entry."
-msgstr "La confirmation du mot de passe est différente du premier entré."
+#: views/layout.html.php:94
+msgid "Yunohost has been succefully installed :-)"
+msgstr "Yunohost a été correctement installé :-)"
 
-#: controllers/admin.php:135
-msgid "This user doesn't exists."
-msgstr "Cet utilisateur n'existe pas."
+#: views/layout.html.php:96
+msgid "Now you have to create your first user, and configure your domain name to redirect to "
+msgstr "Vous devez à présent créer votre premier utilisateur, et configurer votre nom de domaine pour qu'il redirige vers "
 
-#: controllers/admin.php:139
-msgid "No user set."
-msgstr "Aucun utilisateur précisé."
+#: views/layout.html.php:100
+msgid "I got it!"
+msgstr "J'ai compris !"
 
-#: controllers/admin.php:154
-msgid "User succefully deleted."
-msgstr "L'utilisateur a été supprimé avec succès."
+#: views/layout.html.php:121
+msgid "Error"
+msgstr "Erreur"
 
-#: controllers/admin.php:156
-msgid "An error occured on user deletion."
-msgstr "Une erreur est survenue lors de la suppression de l'utilisateur."
+#: views/layout.html.php:126
+msgid "Notice"
+msgstr "Information"
 
-#: controllers/admin.php:205
-msgid "User succefully updated."
-msgstr "L'utilisateur a été mis à jour avec succès."
+#: views/layout.html.php:139
+msgid "Powered by"
+msgstr "Propulsé par"
 
-#: controllers/admin.php:207
-msgid "An error occured on user update."
-msgstr "Une erreur est survenue lors de la mise à jour de l'utilisateur."
+#: views/listApps.html.php:43
+msgid "Upgrade"
+msgstr "Mettre à jour"
 
-#: controllers/admin.php:234
-msgid "Log reader"
-msgstr "Lecteur de log"
+#: views/listApps.html.php:45
+msgid "Uninstall"
+msgstr "Désinstaller"
 
-#~ msgid "Domaines"
-#~ msgstr "Domaines"
+#: views/listDomains.html.php:34
+msgid "New domain name"
+msgstr "Nouveau nom de domaine"
+
+#: views/listDomains.html.php:45
+msgid "Add a domain"
+msgstr "Ajouter un domaine"
+
+#: views/listDomains.html.php:50
+#: views/mailAliasesUserForm.html.php:50
+#: views/passwordUserForm.html.php:46
+msgid "Save"
+msgstr "Enregistrer"
+
+#: views/listUser.html.php:35
+#: views/listUser.html.php:42
+msgid "Edit"
+msgstr "Éditer"
+
+#: views/listUser.html.php:51
+msgid "New user"
+msgstr "Nouvel utilisateur"
+
+#: views/mailAliasesUserForm.html.php:26
+#: views/updateUserForm.html.php:62
+msgid "Mail aliases"
+msgstr "Alias email"
+
+#: views/mailAliasesUserForm.html.php:29
+msgid "Main address"
+msgstr "Adresse principale"
+
+#: views/mailAliasesUserForm.html.php:33
+#: views/mailAliasesUserForm.html.php:39
+msgid "Alias"
+msgstr "Alias"
+
+#: views/mailAliasesUserForm.html.php:34
+msgid "New mail alias"
+msgstr "Nouvel alias email"
+
+#: views/mailAliasesUserForm.html.php:45
+msgid "Add an alias"
+msgstr "Ajouter un alias"
+
+#: views/passwordUserForm.html.php:26
+#: views/updateUserForm.html.php:65
+msgid "Change password"
+msgstr "Changer le mot de passe"
+
+#: views/passwordUserForm.html.php:29
+msgid "Actual"
+msgstr "Actuel"
+
+#: views/passwordUserForm.html.php:30
+msgid "Actual password"
+msgstr "Mot de passe actuel"
+
+#: views/passwordUserForm.html.php:33
+msgid "New"
+msgstr "Nouveau"
+
+#: views/passwordUserForm.html.php:34
+#: views/passwordUserForm.html.php:38
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: views/passwordUserForm.html.php:37
+msgid "Retype new"
+msgstr "Retaper le nouveau"
+
+#: views/systemMonitor.html.php:25
+msgid "Monitoring"
+msgstr "Monitoring"
+
+#: views/systemMonitor.html.php:28
+msgid "CPU"
+msgstr "CPU"
+
+#: views/systemMonitor.html.php:34
+msgid "Memory"
+msgstr "Mémoire"
+
+#: views/systemMonitor.html.php:40
+msgid "Swap"
+msgstr "Swap"
+
+#: views/systemMonitor.html.php:46
+msgid "Tasks"
+msgstr "Tâches"
+
+#: views/systemMonitor.html.php:51
+msgid "Local IP"
+msgstr "IP locale"
+
+#: views/systemMonitor.html.php:56
+msgid "Global IP"
+msgstr "IP globale"
+
+#: views/systemMonitor.html.php:77
+msgid "Log"
+msgstr "Log"
+
+#: views/systemMonitor.html.php:79
+msgid "Activate"
+msgstr "Activer"
+
+#: views/systemMonitor.html.php:81
+msgid "Deactivate"
+msgstr "Désactiver"
+
