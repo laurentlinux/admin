@@ -6,15 +6,15 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: YunoHost Beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-28 13:12+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2012-05-28 13:44+GMT+1\n"
+"Last-Translator: Alexis Gavoty <kload@kload.fr>\n"
+"Language-Team: Yunohost <yunohost@yunohost.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: config/config.php:100 controllers/other.php:35
