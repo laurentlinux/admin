@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-01 00:28+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: views/layout.html.php:35 views/layout.html.php:64
+msgid "Users"
+msgstr ""
+
+#: views/layout.html.php:38 views/layout.html.php:65
+msgid "Domains"
+msgstr ""
+
+#: views/layout.html.php:41 views/layout.html.php:66
+msgid "Applications"
+msgstr ""
+
+#: views/layout.html.php:45 views/layout.html.php:67
+msgid "Tools"
+msgstr ""
+
+#: views/layout.html.php:49
+msgid "System monitor"
+msgstr ""
+
+#: views/layout.html.php:50
+msgid "Yayaya"
+msgstr ""
+
+#: views/layout.html.php:51
+msgid "Yoyoyo"
+msgstr ""
+
+#: views/layout.html.php:77
+msgid "Error"
+msgstr ""
+
+#: views/layout.html.php:82
+msgid "Notice"
+msgstr ""
+
+#: views/layout.html.php:95
+msgid "Powered by"
+msgstr ""
+
+#: views/error_layout.html.php:5
+msgid "Page Not Found :("
+msgstr ""
+
+#: views/error_layout.html.php:23
+msgid "Not found <span>:(</span>"
+msgstr ""
+
+#: views/error_layout.html.php:26
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: views/error_layout.html.php:27
+msgid "It looks like this was the result of either:"
+msgstr ""
+
+#: views/error_layout.html.php:29
+msgid "a mistyped address"
+msgstr ""
+
+#: views/error_layout.html.php:30
+msgid "an out-of-date link"
+msgstr ""
+
+#: views/error_layout.html.php:33
+msgid "Details:"
+msgstr ""
+
+#: views/list.html.php:14 views/list.html.php:21
+msgid "Edit"
+msgstr ""
+
+#: views/list.html.php:22 views/deleteUserForm.html.php:9
+#: controllers/admin.php:132
+msgid "Delete"
+msgstr ""
+
+#: views/list.html.php:30
+msgid "New user"
+msgstr ""
+
+#: views/updateUserForm.html.php:6 views/addUserForm.html.php:4
+msgid "User informations"
+msgstr ""
+
+#: views/updateUserForm.html.php:9 views/addUserForm.html.php:16
+msgid "Username"
+msgstr ""
+
+#: views/updateUserForm.html.php:13 views/addUserForm.html.php:28
+msgid "Firstname"
+msgstr ""
+
+#: views/updateUserForm.html.php:17 views/addUserForm.html.php:32
+msgid "Lastname"
+msgstr ""
+
+#: views/updateUserForm.html.php:21 views/addUserForm.html.php:36
+msgid "Mail"
+msgstr ""
+
+#: views/updateUserForm.html.php:25
+msgid "Alias mail"
+msgstr ""
+
+#: views/updateUserForm.html.php:31 views/addUserForm.html.php:48
+msgid "required fields"
+msgstr ""
+
+#: views/updateUserForm.html.php:34 controllers/admin.php:172
+msgid "Update"
+msgstr ""
+
+#: views/deleteUserForm.html.php:6
+#, php-format
+msgid "Do you really want to delete %s ?"
+msgstr ""
+
+#: views/addUserForm.html.php:7
+msgid "Domain"
+msgstr ""
+
+#: views/addUserForm.html.php:20
+msgid "Password"
+msgstr ""
+
+#: views/addUserForm.html.php:24
+msgid "Confirm password"
+msgstr ""
+
+#: views/addUserForm.html.php:41
+msgid "Administrator"
+msgstr ""
+
+#: views/addUserForm.html.php:51
+msgid "Create"
+msgstr ""
+
+#: index.php:102
+msgid "Please add a new user to complete setup."
+msgstr ""
+
+#: controllers/admin.php:46
+msgid "List users"
+msgstr ""
+
+#: controllers/admin.php:57
+msgid "Add user"
+msgstr ""
+
+#: controllers/admin.php:88
+msgid "This mail address already exists."
+msgstr ""
+
+#: controllers/admin.php:97
+msgid "This user already exists."
+msgstr ""
+
+#: controllers/admin.php:110
+msgid "User succefully created."
+msgstr ""
+
+#: controllers/admin.php:113
+msgid "An error occured on user creation."
+msgstr ""
+
+#: controllers/admin.php:114
+msgid "Invalid length or character."
+msgstr ""
+
+#: controllers/admin.php:115
+msgid "The email domain does not match the domain."
+msgstr ""
+
+#: controllers/admin.php:116
+msgid "The email address is invalid."
+msgstr ""
+
+#: controllers/admin.php:117
+msgid "The password confirmation is different from the first password entry."
+msgstr ""
+
+#: controllers/admin.php:135
+msgid "This user doesn't exists."
+msgstr ""
+
+#: controllers/admin.php:139
+msgid "No user set."
+msgstr ""
+
+#: controllers/admin.php:154
+msgid "User succefully deleted."
+msgstr ""
+
+#: controllers/admin.php:156
+msgid "An error occured on user deletion."
+msgstr ""
+
+#: controllers/admin.php:205
+msgid "User succefully updated."
+msgstr ""
+
+#: controllers/admin.php:207
+msgid "An error occured on user update."
+msgstr ""
+
+#: controllers/admin.php:234
+msgid "Log reader"
+msgstr ""

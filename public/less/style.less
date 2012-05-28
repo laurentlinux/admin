@@ -1,0 +1,108 @@
+@import "bootstrap/bootstrap.less";
+
+html {
+  background-color: white;
+  background: #fff url('../img/pattern.png') top left repeat;
+}
+
+body {
+  background: transparent;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  font-family: 'Roboto';
+}
+
+body p {
+	font-family: 'Roboto';
+}
+
+@import "bootstrap/responsive.less";
+@import "fonts.less";
+
+
+/* ===== Primary Styles ========================================================
+   Author: Kload
+   ========================================================================== */
+
+footer {
+	text-align: center;
+}
+
+.navbar .brand {
+    padding: 4px 20px;
+}
+
+body hr {
+	margin-top: 28px;
+}
+
+label.labeluser {
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
+.inline {
+	display: inline;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.useradd hr {
+	margin-top: 18px;
+}
+
+.avatar {
+	float: left;
+	height: 42px;
+	width: 42px;
+	.box-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+.maillist {
+	margin-top: 4px;
+	margin-bottom: 5px;
+	color: #666;
+}
+
+.btn-smallest {
+    font-size: 10px;
+    line-height: 11px;
+    padding: 3px 5px;
+}
+
+.well {
+	background-color: #F0F0F0;
+}
+
+@media (max-width: 480px) {
+	input[class*="span"], select[class*="span"], textarea[class*="span"], select[class*="span"], .uneditable-input {
+		width: 90%;
+		margin-left: 5%;
+	}	
+}
+
+.progress {
+	background: #FFF;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #CCC #DDD #DDD;
+}
+
+input, textarea, select, .uneditable-input {
+	height: inherit;
+}
+
+.label {
+	font-size: 10.5px;
+}
+
+label {
+	color: #666;
+}

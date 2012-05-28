@@ -1,0 +1,244 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Alexis <translate@yunohost.org>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-01 00:28+0200\n"
+"PO-Revision-Date: 2012-04-01 00:29+0100\n"
+"Last-Translator: Alexis Gavoty <alexis@gavoty.fr>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: views/layout.html.php:35
+#: views/layout.html.php:64
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: views/layout.html.php:38
+#: views/layout.html.php:65
+msgid "Domains"
+msgstr "Domaines"
+
+#: views/layout.html.php:41
+#: views/layout.html.php:66
+msgid "Applications"
+msgstr "Applications"
+
+#: views/layout.html.php:45
+#: views/layout.html.php:67
+msgid "Tools"
+msgstr "Outils"
+
+#: views/layout.html.php:49
+msgid "System monitor"
+msgstr "Moniteur système"
+
+#: views/layout.html.php:50
+msgid "Yayaya"
+msgstr "Yayaya"
+
+#: views/layout.html.php:51
+msgid "Yoyoyo"
+msgstr "Yoyoyo"
+
+#: views/layout.html.php:77
+msgid "Error"
+msgstr "Erreur"
+
+#: views/layout.html.php:82
+msgid "Notice"
+msgstr "Note"
+
+#: views/layout.html.php:95
+msgid "Powered by"
+msgstr "Propulsé par"
+
+#: views/error_layout.html.php:5
+msgid "Page Not Found :("
+msgstr "Page introuvable :("
+
+#: views/error_layout.html.php:23
+msgid "Not found <span>:(</span>"
+msgstr "Page introuvable <span>:(</span>"
+
+#: views/error_layout.html.php:26
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr "Désolé, mais la page que vous cherchez à atteindre n'existe pas."
+
+#: views/error_layout.html.php:27
+msgid "It looks like this was the result of either:"
+msgstr "Cela peut être lié à:"
+
+#: views/error_layout.html.php:29
+msgid "a mistyped address"
+msgstr "une erreur dans l'adresse"
+
+#: views/error_layout.html.php:30
+msgid "an out-of-date link"
+msgstr "un lien non valable"
+
+#: views/error_layout.html.php:33
+msgid "Details:"
+msgstr "Détails:"
+
+#: views/list.html.php:14
+#: views/list.html.php:21
+msgid "Edit"
+msgstr "Éditer"
+
+#: views/list.html.php:22
+#: views/deleteUserForm.html.php:9
+#: controllers/admin.php:132
+msgid "Delete"
+msgstr "Supprimer"
+
+#: views/list.html.php:30
+msgid "New user"
+msgstr "Nouvel utilisateur"
+
+#: views/updateUserForm.html.php:6
+#: views/addUserForm.html.php:4
+msgid "User informations"
+msgstr "Informations de l'utilisateur"
+
+#: views/updateUserForm.html.php:9
+#: views/addUserForm.html.php:16
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: views/updateUserForm.html.php:13
+#: views/addUserForm.html.php:28
+msgid "Firstname"
+msgstr "Prénom"
+
+#: views/updateUserForm.html.php:17
+#: views/addUserForm.html.php:32
+msgid "Lastname"
+msgstr "Nom"
+
+#: views/updateUserForm.html.php:21
+#: views/addUserForm.html.php:36
+msgid "Mail"
+msgstr "Email"
+
+#: views/updateUserForm.html.php:25
+msgid "Alias mail"
+msgstr "Email d'alias"
+
+#: views/updateUserForm.html.php:31
+#: views/addUserForm.html.php:48
+msgid "required fields"
+msgstr "champs obligatoires"
+
+#: views/updateUserForm.html.php:34
+#: controllers/admin.php:172
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: views/deleteUserForm.html.php:6
+#, php-format
+msgid "Do you really want to delete %s ?"
+msgstr "Voulez-vous vraiment supprimer %s ?"
+
+#: views/addUserForm.html.php:7
+msgid "Domain"
+msgstr "Domaine"
+
+#: views/addUserForm.html.php:20
+msgid "Password"
+msgstr "Mot de passe"
+
+#: views/addUserForm.html.php:24
+msgid "Confirm password"
+msgstr "Confirmation"
+
+#: views/addUserForm.html.php:41
+msgid "Administrator"
+msgstr "Administrateur"
+
+#: views/addUserForm.html.php:51
+msgid "Create"
+msgstr "Créer"
+
+#: index.php:102
+msgid "Please add a new user to complete setup."
+msgstr "Merci d'ajouter un nouvel utilisateur pour terminer l'installation."
+
+#: controllers/admin.php:46
+msgid "List users"
+msgstr "Liste des utilisateurs"
+
+#: controllers/admin.php:57
+msgid "Add user"
+msgstr "Ajouter un utilisateur"
+
+#: controllers/admin.php:88
+msgid "This mail address already exists."
+msgstr "Cette adresse email existe déjà."
+
+#: controllers/admin.php:97
+msgid "This user already exists."
+msgstr "Cet utilisateur existe déjà."
+
+#: controllers/admin.php:110
+msgid "User succefully created."
+msgstr "L'utilisateur a été créé avec succès."
+
+#: controllers/admin.php:113
+msgid "An error occured on user creation."
+msgstr "Une erreur est survenu lors de la création de l'utilisateur."
+
+#: controllers/admin.php:114
+msgid "Invalid length or character."
+msgstr "Longueur ou caractère invalide."
+
+#: controllers/admin.php:115
+msgid "The email domain does not match the domain."
+msgstr "L'adresse email ne correspond pas au domaine."
+
+#: controllers/admin.php:116
+msgid "The email address is invalid."
+msgstr "L'adresse email est invalide."
+
+#: controllers/admin.php:117
+msgid "The password confirmation is different from the first password entry."
+msgstr "La confirmation du mot de passe est différente du premier entré."
+
+#: controllers/admin.php:135
+msgid "This user doesn't exists."
+msgstr "Cet utilisateur n'existe pas."
+
+#: controllers/admin.php:139
+msgid "No user set."
+msgstr "Aucun utilisateur précisé."
+
+#: controllers/admin.php:154
+msgid "User succefully deleted."
+msgstr "L'utilisateur a été supprimé avec succès."
+
+#: controllers/admin.php:156
+msgid "An error occured on user deletion."
+msgstr "Une erreur est survenue lors de la suppression de l'utilisateur."
+
+#: controllers/admin.php:205
+msgid "User succefully updated."
+msgstr "L'utilisateur a été mis à jour avec succès."
+
+#: controllers/admin.php:207
+msgid "An error occured on user update."
+msgstr "Une erreur est survenue lors de la mise à jour de l'utilisateur."
+
+#: controllers/admin.php:234
+msgid "Log reader"
+msgstr "Lecteur de log"
+
+#~ msgid "Domaines"
+#~ msgstr "Domaines"

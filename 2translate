@@ -1,0 +1,14 @@
+# List of files to translate with gettext.
+views/layout.html.php
+views/error_layout.html.php
+views/list.html.php
+views/updateUserForm.html.php
+views/deleteUserForm.html.php
+views/addUserForm.html.php
+views/log.html.php
+views/chat.html.php
+views/services.html.php
+config/config.php
+controllers/user.php
+controllers/tools.php
+controllers/other.php
