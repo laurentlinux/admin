@@ -22,7 +22,6 @@ require dirname(__FILE__).'/vendor/limonade.php';
 require dirname(__FILE__).'/config/routes.php'; 
 require dirname(__FILE__).'/vendor/ldapOrm.php';
 require dirname(__FILE__).'/vendor/yunohostLdap.php';
-require dirname(__FILE__).'/vendor/ldap.php';
 require dirname(__FILE__).'/vendor/unix_func.php';
 require '/usr/share/php/php-gettext/gettext.inc';
 

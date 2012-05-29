@@ -85,22 +85,10 @@
 
     <div class="container">
 
-      <?php if (isset($_SESSION['first-install']) && $_SESSION['first-install']) { ?>
-        <div class="modal fade" id="welcomeModal">
-          <div class="modal-header">
-            <h3><?php echo T_('Congratulations !') ?></h3>
-            </div>
-            <div class="modal-body">
-            <p><strong><?php echo T_('Yunohost has been succefully installed :-)') ?></strong></p>
-            <p><?php $ip = exec('curl ifconfig.me');
-            echo T_('Now you have to create your first user, and configure your domain name to redirect to ') ?>
-            <strong><?php echo $ip ?></strong></p>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-primary" data-dismiss="modal"><?php echo T_('I got it!') ?></a>
-          </div>
-        </div>
-      <?php } ?>
+      <?php if (isset($_SESSION['first-install']) && $_SESSION['first-install']) { 
+        include 'welcomePopUp.html.php';
+      } ?>
+
 
 
       <ul class="breadcrumb">

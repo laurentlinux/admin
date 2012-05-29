@@ -31,4 +31,5 @@ views/mailAliasesUserForm.html.php
 views/passwordUserForm.html.php
 views/systemMonitor.html.php
 views/updateUserForm.html.php
+views/welcomePopUp.html.php
 index.php
