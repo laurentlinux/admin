@@ -46,6 +46,11 @@
 				<div class="span3 right" style="width: 22%"><?php echo T_('Tasks') ?></div>
 				<div class="span8" style="float: right; width: 74%"><?php echo $tasks[0] ?></div>
 			</div>
+		</div>
+	</div>
+	<div class="span6">
+		<div class="well">
+			<h3 class="center"><?php echo T_('Network') ?></h3>
 			<br />
 			<div class="row-fluid">
 				<div class="span3 right" style="width: 22%"><?php echo T_('Local IP') ?></div>
@@ -55,6 +60,11 @@
 			<div class="row-fluid">
 				<div class="span3 right" style="width: 22%"><?php echo T_('Global IP') ?></div>
 				<div class="span8" style="float: right; width: 74%"><strong><?php echo $globalIP ?></strong></div>
+			</div>
+			<br />
+			<div class="row-fluid">
+				<div class="span3 right" style="width: 22%"><?php echo T_('MAC address') ?></div>
+				<div class="span8" style="float: right; width: 74%"><strong><?php echo $macAddr ?></strong></div>
 			</div>
 		</div>
 	</div>

@@ -108,6 +108,7 @@ function systemMonitor () {
 
   $globalIP = exec('curl ifconfig.me');
   $localIP = exec('/sbin/ifconfig | sed \'/Bcast/!d\' | awk \'{print $2}\'| awk \'{print $2}\' FS=":"');
+  $macAddr = exec('/sbin/ifconfig | awk \'/HWaddr/ {print $5}\'');
   exec('/usr/bin/top -b -n 1 -i', $top);
 
   $summary = preg_split('/, /', substr($top[0], strpos($top[0], '-') + 2));
@@ -120,6 +121,7 @@ function systemMonitor () {
 
   set('globalIP', $globalIP);
   set('localIP', $localIP);
+  set('macAddr', $macAddr);
   set('report', $report);
   set('summary', $summary);
   set('time', $time);
