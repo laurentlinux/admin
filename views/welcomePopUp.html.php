@@ -1,7 +1,7 @@
 <?php 
 
  /**
-  *  Yunohost - Self-hosting for all
+  *  YunoHost - Self-hosting for all
   *  Copyright (C) 2012  Kload <kload@kload.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@
             <h2><?php echo T_('Congratulations !') ?></h2>
             </div>
             <div class="modal-body">
-            <h4><?php echo T_('Yunohost has been succefully installed :-)') ?></h4>
+            <h4><?php echo T_('YunoHost has been succefully installed :-)') ?></h4>
             <br />
             <p><?php 
 

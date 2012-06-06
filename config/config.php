@@ -1,7 +1,7 @@
 <?php 
 
  /**
-  *  Yunohost - Self-hosting for all
+  *  YunoHost - Self-hosting for all
   *  Copyright (C) 2012  Kload <kload@kload.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
@@ -177,7 +177,7 @@ function sendMail ($mail, $subject, $txtMessage, $htmlMessage = null) {
    
   $boundary = "-----=".md5(rand());
       
-  $header = "From: \"Yunohost\"<no-reply@yunohost.org>".$lineBreak;
+  $header = "From: \"YunoHost\"<no-reply@yunohost.org>".$lineBreak;
   $header.= "Reply-to: \"No reply\"<no-reply@yunohost.org>".$lineBreak;
   $header.= "MIME-Version: 1.0".$lineBreak;
   $header.= "Content-Type: multipart/alternative;".$lineBreak." boundary=\"$boundary\"".$lineBreak;

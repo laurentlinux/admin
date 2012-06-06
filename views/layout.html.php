@@ -1,7 +1,7 @@
 <?php 
 
  /**
-  *  Yunohost - Self-hosting for all
+  *  YunoHost - Self-hosting for all
   *  Copyright (C) 2012  Kload <kload@kload.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Yunohost <?php echo (isset($title)) ? "| ".$title : "" ?></title>
+	<title>YunoHost <?php echo (isset($title)) ? "| ".$title : "" ?></title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 

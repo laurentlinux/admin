@@ -1,7 +1,7 @@
 <?php 
 
  /**
-  *  Yunohost - Self-hosting for all
+  *  YunoHost - Self-hosting for all
   *  Copyright (C) 2012  Kload <kload@kload.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@
   *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
   */
 
-class YunohostLdap extends LdapEntry
+class YunoHostLdap extends LdapEntry
 {
 	public function __construct($server, $domain, $modelPath) 
 	{

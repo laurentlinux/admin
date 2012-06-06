@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Yunohost Beta\n"
+"Project-Id-Version: YunoHost Beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-28 13:12+0200\n"
 "PO-Revision-Date: 2012-05-28 13:38+0100\n"
@@ -354,8 +354,8 @@ msgid "Congratulations !"
 msgstr "Félicitations !"
 
 #: views/layout.html.php:94
-msgid "Yunohost has been succefully installed :-)"
-msgstr "Yunohost a été correctement installé :-)"
+msgid "YunoHost has been succefully installed :-)"
+msgstr "YunoHost a été correctement installé :-)"
 
 #: views/layout.html.php:96
 msgid "Now you have to create your first user, and configure your domain name to redirect to "
