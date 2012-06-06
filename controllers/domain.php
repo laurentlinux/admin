@@ -1,7 +1,7 @@
 <?php
 
  /**
-  *  Yunohost - Self-hosting for dummies
+  *  Yunohost - Self-hosting for all
   *  Copyright (C) 2012  Kload <kload@kload.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
