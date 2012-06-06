@@ -136,3 +136,27 @@ function systemMonitor () {
   return render("systemMonitor.html.php");
 }
 
+/**
+ * GET /tools/upgrade/number (AJAX access only)
+ */
+function getUpgradeNumber () {
+  $number = exec('yunohost upgradable-pkgs');
+  $_SESSION['upgradeNumber'] = $number;
+
+  return $number;
+}
+
+
+/**
+ * GET /tools/upgrade
+ */
+function upgradeConfirm () {
+  if (!isset($_SESSION['upgradeNumber'])) {
+    $number = exec('yunohost upgradable-pkgs');
+    $_SESSION['upgradeNumber'] = $number;
+  }
+
+  set('number', $_SESSION['upgradeNumber']);
+  set('title', T_('System upgrade'));
+  return render("upgradeConfirm.html.php");
+}

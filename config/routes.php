@@ -67,3 +67,8 @@ dispatch('/tools/chat', 'getChat');
 dispatch('/tools/chat/enable', 'enableChat');
 dispatch('/tools/chat/disable', 'disableChat');
 dispatch('/tools/monitor', 'systemMonitor');
+dispatch('/tools/upgrade/number', 'getUpgradeNumber');
+dispatch('/tools/upgrade', 'upgradeConfirm');
+dispatch('/tools/upgrade/packages', 'upgradeAjax');
+dispatch_post('/tools/upgrade/packages', 'upgradePost');
+

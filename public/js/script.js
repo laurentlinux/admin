@@ -118,6 +118,20 @@ jQuery(document).ready(function() {
 			jQuery(".useradd #newPassword").css('color', '#E9322D');
 		}
 	});
+
+	jQuery("#upgrade-li a").live('click', function() {
+		html = '<a href="#" title="" style="color: #fff" id="check-upgrades"><img src="/public/img/ajax-loader.gif" /></a>';
+		jQuery("#upgrade-li").html(html);
+		jQuery.get('/tools/upgrade/number', function(data) {
+			if (data == 0) {
+				var html = '<a href="#" title="" style="color: #fff"><i class="icon-ok icon-white" style="margin: 2px 0 0 0"></i></a>';
+				jQuery("#upgrade-li").html(html);
+			} else {
+				var html = '<a href="/tools/upgrade" title="" style="color: #fff"><i class="icon-download-alt icon-white" style="margin: 2px 6px 0 0"></i><span class="label label-info">'+ data +'</span></a>'
+				jQuery("#upgrade-li").html(html);
+			}
+		});
+	});
 });
 
 

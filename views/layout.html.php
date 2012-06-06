@@ -74,6 +74,16 @@
                 </ul>
               </li>
               <li class="divider-vertical"></li>
+              <li id="upgrade-li">
+              <?php if (!isset($_SESSION['upgradeNumber'])) { ?>
+                <a href="#" title="<?php echo T_('Check upgrades') ?>" style="color: #fff"><i class="icon-refresh icon-white" style="margin: 2px 0 0 0"></i></a>
+              <?php } elseif ($_SESSION['upgradeNumber'] == 0) { ?>
+                <a href="#" title="<?php echo T_('Your system is up-to-date') ?>" style="color: #fff"><i class="icon-ok icon-white" style="margin: 2px 0 0 0"></i></a>
+              <?php } else { ?>
+                <a href="/tools/upgrade" title="<?php echo T_('Upgrade') ?>" style="color: #fff"><i class="icon-download-alt icon-white" style="margin: 2px 6px 0 0"></i><span class="label label-info"><?php echo $_SESSION['upgradeNumber'] ?></span></a>
+              <?php } ?>
+              </li>
+              <li class="divider-vertical"></li>
               <li class="">
                 <a href="/logout" title="<?php echo T_('Log out') ?>" style="color: #fff"><i class="icon-off icon-white" style="margin: 2px 6px 0 0"></i><strong><?php echo $userUid ?></strong></a>
               </li>

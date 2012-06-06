@@ -152,11 +152,11 @@ function before($route)
 
 function after($output, $route)
 {
-  $time = number_format( (float)substr(microtime(), 0, 10) - LIM_START_MICROTIME, 6);
-  $output .= "\n<!-- page rendered in $time sec., on ".date(DATE_RFC822)." -->\n";
-  $output .= "<!-- for route\n";
-  $output .= print_r($route, true);
-  $output .= "-->";
+  // $time = number_format( (float)substr(microtime(), 0, 10) - LIM_START_MICROTIME, 6);
+  // $output .= "\n<!-- page rendered in $time sec., on ".date(DATE_RFC822)." -->\n";
+  // $output .= "<!-- for route\n";
+  // $output .= print_r($route, true);
+  // $output .= "-->";
   return $output;
 }
 
