@@ -29,7 +29,7 @@
 					</div>
 					<div class="span">
 						<strong><?php echo ucfirst($app); ?></strong> 
-						<?php if (isset($upgradableApps[$key])) { ?>
+						<?php if (isset($upgradableApps[$app])) { ?>
 							 - <span style="color: blue">Upgradable</span>
 						<?php } elseif (isset($installedApps[$key])) { ?>
 							 - <span style="color: green">Installed</span>
@@ -39,10 +39,10 @@
 					</div>
 					<div class="span1" style="margin-left: 3px; width: 100px; float: right;">
 						<div style="text-align: right">
-							<?php if (isset($upgradableApps[$key])) { ?>
-								<a href="/app/update/<?php echo $app ?>" title="<?php echo T_('Update').' '.ucfirst($app) ?>" class="btn btn-info"><i class="icon-refresh icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Upgrade') ?></a>
+							<?php if (isset($upgradableApps[$app])) { ?>
+								<a href="/app/update/<?php echo $app ?>" title="<?php echo T_('Update').' '.ucfirst($app) ?>" class="btn btn-info"><i class="icon-refresh icon-white" style="margin: 2px 0 0 0"></i></a>
 							<?php } elseif (isset($installedApps[$key])) { ?>
-								<a href="/app/remove/<?php echo $app ?>" title="<?php echo T_('Uninstall').' '.ucfirst($app) ?>" class="btn btn-danger"><i class="icon-trash icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Uninstall') ?></a>
+								<a href="/app/remove/<?php echo $app ?>" title="<?php echo T_('Uninstall').' '.ucfirst($app) ?>" class="btn btn-danger"><i class="icon-trash icon-white" style="margin: 2px 0 0 0"></i></a>
 							<?php } else {?>
 								<a href="/app/install/<?php echo $app ?>" title="<?php echo T_('Install').' '.ucfirst($app) ?>" class="btn btn-success"><i class="icon-download-alt icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Install') ?></a>
 							<?php } ?>

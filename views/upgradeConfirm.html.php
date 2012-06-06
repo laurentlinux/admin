@@ -22,7 +22,8 @@
  <form action="/tools/upgrade/packages" method="post" class="row row-tab useradd">
 	<div class="span6 center well">
 		<h3><?php echo sprintf(T_('You have %s packages to upgrade.'), $number) ?></h3>
-	  <br />
+    <br />
+	  <p id="upgrade-result" style="text-align: left; font-family: monospace; font-size: 10px;"></p>
 		<input type="submit" class="btn btn-primary btn-large" value="<?php echo T_('Upgrade') ?>" id="system-upgrade" />
 		<div style="clear: both;"></div>
 	</div>

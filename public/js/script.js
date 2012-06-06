@@ -120,8 +120,8 @@ jQuery(document).ready(function() {
 	});
 
 	jQuery("#upgrade-li a").live('click', function() {
-		html = '<a href="#" title="" style="color: #fff" id="check-upgrades"><img src="/public/img/ajax-loader.gif" /></a>';
-		jQuery("#upgrade-li").html(html);
+		html = '<a href="#" title="" style="color: #fff" id="check-upgrades"><img src="/public/img/ajax-loader-white.gif" /></a>';
+		jQuery('#upgrade-li').html(html);
 		jQuery.get('/tools/upgrade/number', function(data) {
 			if (data == 0) {
 				var html = '<a href="#" title="" style="color: #fff"><i class="icon-ok icon-white" style="margin: 2px 0 0 0"></i></a>';
@@ -132,6 +132,16 @@ jQuery(document).ready(function() {
 			}
 		});
 	});
+
+	jQuery("#system-upgrade").click(function(event) {
+		event.preventDefault();
+		html = '<img src="/public/img/ajax-loader.gif" />';
+		jQuery("#upgrade-result").html(html);
+		jQuery.get('/tools/upgrade/packages', function(data) {
+			jQuery("#upgrade-result").html(data);
+		});
+	});
+
 });
 
 

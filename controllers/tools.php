@@ -140,7 +140,8 @@ function systemMonitor () {
  * GET /tools/upgrade/number (AJAX access only)
  */
 function getUpgradeNumber () {
-  $number = exec('yunohost upgradable-pkgs');
+  exec('sudo yunohost check-repo');
+  $number = exec('sudo yunohost upgradable-pkgs');
   $_SESSION['upgradeNumber'] = $number;
 
   return $number;
@@ -152,11 +153,27 @@ function getUpgradeNumber () {
  */
 function upgradeConfirm () {
   if (!isset($_SESSION['upgradeNumber'])) {
-    $number = exec('yunohost upgradable-pkgs');
+    exec('sudo yunohost check-repo');
+    $number = exec('sudo yunohost upgradable-pkgs');
     $_SESSION['upgradeNumber'] = $number;
   }
 
   set('number', $_SESSION['upgradeNumber']);
   set('title', T_('System upgrade'));
   return render("upgradeConfirm.html.php");
+}
+
+
+/**
+ * GET /tools/upgrade/packages (AJAX access only)
+ */
+function upgradeAjax () {
+  ob_start();
+  passthru('sudo yunohost update-dist' , $errorCode);
+  $result = ob_get_contents();
+  ob_end_clean();
+
+  $result = str_replace("\n", "<br />", $result);
+  if ($errorCode) $_SESSION['upgradeNumber'] = 0;
+  return $result;
 }

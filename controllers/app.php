@@ -59,6 +59,10 @@ function listApps () {
     }
   }
 
+  $upgradableApps = exec('yunohost upgradable-apps');
+  $upgradableAppsArray = array_flip(explode("\n", $upgradableApps));
+
+  set('upgradableApps', $upgradableAppsArray);
   set('installedApps', $installedApps);
   set('appDesc', $appDesc);
   set('appPkgNames', $appPkgNames);
