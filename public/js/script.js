@@ -123,13 +123,8 @@ jQuery(document).ready(function() {
 		html = '<a href="#" title="" style="color: #fff" id="check-upgrades"><img src="/public/img/ajax-loader-white.gif" /></a>';
 		jQuery('#upgrade-li').html(html);
 		jQuery.get('/tools/upgrade/number', function(data) {
-			if (data == 0) {
-				var html = '<a href="#" title="" style="color: #fff"><i class="icon-ok icon-white" style="margin: 2px 0 0 0"></i></a>';
-				jQuery("#upgrade-li").html(html);
-			} else {
-				var html = '<a href="/tools/upgrade" title="" style="color: #fff"><i class="icon-download-alt icon-white" style="margin: 2px 6px 0 0"></i><span class="label label-info">'+ data +'</span></a>'
-				jQuery("#upgrade-li").html(html);
-			}
+				jQuery("#upgrade-li").html(data);
+				jQuery("#upgrade-li .tiptool").fadeIn(300).delay(4000).fadeOut(300);
 		});
 	});
 

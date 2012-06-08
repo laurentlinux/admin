@@ -144,7 +144,20 @@ function getUpgradeNumber () {
   $number = exec('sudo yunohost upgradable-pkgs');
   $_SESSION['upgradeNumber'] = $number;
 
-  return $number;
+  if (true) {
+    $html =   '<a href="/tools/upgrade" title="'.T_('You have updates on your system').'" style="color: #fff">
+                <i class="icon-download-alt icon-white" style="margin: 2px 6px 0 0"></i>
+                <span class="label label-info">'.$number.'</span>
+                 <span class="tiptool alert alert-info" style="display: none; padding: 1px 5px 3px; margin-left: 5px;">'.T_('You have updates on your system').'</span>
+              </a>';
+  } else {
+    $html =   '<a href="#" title="'.T_('Your system is up-to-date').'" style="color: #fff">
+                <i class="icon-ok icon-white" style="margin: 2px 0 0 0"></i>
+                <span class="tiptool alert alert-success" style="display: none; padding: 1px 5px 3px; margin-left: 5px;">'.T_('Your system is up-to-date').'</span>
+              </a>';
+  }
+
+  return $html;
 }
 
 
