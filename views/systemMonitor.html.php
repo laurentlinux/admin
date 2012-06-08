@@ -33,7 +33,7 @@
 			<div class="row-fluid">
 				<div class="span3 right" style="width: 22%"><?php echo T_('Memory') ?></div>
 				<div class="progress progress-striped progress-danger active span8" style="float: right; width: 74%">
-			    <div class="bar" style="width: <?php $realMemory = $memory[1]-$swap[3]; echo round($realMemory/$memory[0]*100) ?>%;"></div>
+			    <div class="bar" style="width: <?php echo round(($memory[1]-$swap[3])/$memory[0]*100) ?>%;"></div>
 				</div>
 			</div>
 			<div class="row-fluid">

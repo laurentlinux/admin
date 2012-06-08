@@ -95,7 +95,8 @@ function before($route)
    * Authenticate
    */
   function authenticate() {
-    header('WWW-Authenticate: Basic realm="'.T_('admin OR username / password').'"');
+    if(isset($_SESSION['isConnected'])) unset($_SESSION['isConnected']);
+    header('WWW-Authenticate: Basic realm="'.print_r($_SESSION['isConnected']).'"');
     header('HTTP/1.0 401 Unauthorized');
     header('Content-Type: text/html; charset=UTF-8');
     echo T_('You must identify yourself to access to this page.');
@@ -131,10 +132,10 @@ function before($route)
   /**
    * Check authentcation
    */
-  if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == false) authenticate();
-
   if (isset($_SERVER['PHP_AUTH_USER'])) {
-    if (!isset($_SESSION['isConnected']) || $_SESSION['isConnected'] == false) {
+    if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
+      continueRouting($route);
+    } elseif (!isset($_SESSION['isConnected'])) {
       if ($ldap->connect(array('cn' => $_SERVER['PHP_AUTH_USER']), $_SERVER['PHP_AUTH_PW'])) {
         if (!$ldap->backgroundInstalled()) {
           if ($ldap->installBackground()) {
@@ -148,7 +149,7 @@ function before($route)
       } else {
         authenticate();
       }
-    } else continueRouting($route);
+    } else authenticate();
   } else authenticate();
 }
 
@@ -159,11 +160,13 @@ function before($route)
 
 function after($output, $route)
 {
+  /*
   $time = number_format( (float)substr(microtime(), 0, 10) - LIM_START_MICROTIME, 6);
   $output .= "\n<!-- page rendered in $time sec., on ".date(DATE_RFC822)." -->\n";
   $output .= "<!-- for route\n";
   $output .= print_r($route, true);
   $output .= "-->";
+  */
   return $output;
 }
 

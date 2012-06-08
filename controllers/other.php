@@ -33,7 +33,6 @@ function logout() {
   $_SESSION['isConnected'] = false;
 
   redirect_to('/user/list');
-  exit;
 }
 
 /**
