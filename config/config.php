@@ -96,7 +96,7 @@ function before($route)
    */
   function authenticate() {
     if(isset($_SESSION['isConnected'])) unset($_SESSION['isConnected']);
-    header('WWW-Authenticate: Basic realm="'.print_r($_SESSION['isConnected']).'"');
+    header('WWW-Authenticate: Basic realm="'.T_('admin OR username / password').'"');
     header('HTTP/1.0 401 Unauthorized');
     header('Content-Type: text/html; charset=UTF-8');
     echo T_('You must identify yourself to access to this page.');
