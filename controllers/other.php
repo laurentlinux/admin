@@ -3,6 +3,7 @@
  /**
   *  YunoHost - Self-hosting for all
   *  Copyright (C) 2012  Kload <kload@kload.fr>
+  *     Guillaume DOTT <github@dott.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
   *  it under the terms of the GNU Affero General Public License as
@@ -43,38 +44,41 @@ function changeLocale ($locale = 'en') {
     case 'fr':
       $_SESSION['locale'] = 'fr';
       break;
-    
+
     default:
       $_SESSION['locale'] = 'en';
       break;
   }
-  redirect_to('/user/list');
+  if(!empty($_GET['redirect_to']))
+    redirect_to($_GET['redirect_to']);
+  else
+    redirect_to('/user/list');
 }
 
 /**
  * GET /images/:name/:size
  */
 function image_show()
-  {
-    $ext = file_extension(params('name'));
-    $filename = option('public_dir').basename(params('name'), ".$ext");
-    if(params('size') == 'thumb') $filename .= ".thb";
-    $filename .= '.jpg';
-    
-    if(!file_exists($filename)) halt(NOT_FOUND, "$filename doesn't exists");
-    render_file($filename);
-  }
+{
+  $ext = file_extension(params('name'));
+  $filename = option('public_dir').basename(params('name'), ".$ext");
+  if(params('size') == 'thumb') $filename .= ".thb";
+  $filename .= '.jpg';
+
+  if(!file_exists($filename)) halt(NOT_FOUND, "$filename doesn't exists");
+  render_file($filename);
+}
 
 /**
  * GET /images/*.jpg/:size
  */
 function image_show_jpeg_only()
-  {
-    $ext = file_extension(params(0));
-    $filename = option('public_dir').params(0);
-    if(params('size') == 'thumb') $filename .= ".thb";
-    $filename .= '.jpg';
-  
-    if(!file_exists($filename)) halt(NOT_FOUND, "$filename doesn't exists");
-    render_file($filename);
-  }
+{
+  $ext = file_extension(params(0));
+  $filename = option('public_dir').params(0);
+  if(params('size') == 'thumb') $filename .= ".thb";
+  $filename .= '.jpg';
+
+  if(!file_exists($filename)) halt(NOT_FOUND, "$filename doesn't exists");
+  render_file($filename);
+}
