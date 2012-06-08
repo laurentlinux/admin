@@ -25,7 +25,7 @@
 			<div class="well">
 				<div class="row">
 					<div class="avatar span2">
-						<img src="<?php echo PUBLIC_DIR ?>/img/default.svg" />
+						<img src="<?php echo PUBLIC_DIR ?>/img/user.png" />
 					</div>
 					<div class="span">
 						<?php foreach ($adminsDn as $adminDn) {
