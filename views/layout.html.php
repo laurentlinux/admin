@@ -86,17 +86,6 @@
               <?php } ?>
               </li>
               <li class="divider-vertical"></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="icon-flag icon-white" style="margin: 2px 6px 0 0"></i>
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li<?php if($locale == 'en') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'en', array('redirect_to' => request_uri())); ?>"><?php echo T_('English') ?></a></li>
-                  <li<?php if($locale == 'fr') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'fr', array('redirect_to' => request_uri())); ?>"><?php echo T_('French') ?></a></li>
-                </ul>
-              </li>
-              <li class="divider-vertical"></li>
               <li class="">
                 <a href="/logout" title="<?php echo T_('Log out') ?>" style="color: #fff"><i class="icon-off icon-white" style="margin: 2px 6px 0 0"></i><strong><?php echo $userUid ?></strong></a>
               </li>
@@ -147,7 +136,14 @@
       <hr>
 
       <footer>
-        <p><?php echo T_('Powered by') ?> <a href="http://yunohost.org/">YunoHost</a> (Beta)</p>
+        <span><?php echo T_('Powered by') ?> <a href="http://yunohost.org/">YunoHost</a> (Beta) 
+          <div class="btn-group dropup pull-right">
+          <button data-toggle="dropdown" class="btn btn-small dropdown-toggle"><i class="icon-flag" style="margin: 2px 6px 0 0"></i> <span class="caret"></span></button>
+          <ul class="dropdown-menu pull-right">
+            <li<?php if($locale == 'en') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'en', array('redirect_to' => request_uri())); ?>"><?php echo T_('English') ?></a></li>
+            <li<?php if($locale == 'fr') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'fr', array('redirect_to' => request_uri())); ?>"><?php echo T_('French') ?></a></li>
+          </ul>
+        </div></span>
       </footer>
 
     </div> <!-- /container -->
