@@ -3,6 +3,7 @@
  /**
   *  YunoHost - Self-hosting for all
   *  Copyright (C) 2012  Kload <kload@kload.fr>
+  *     Guillaume DOTT <github@dott.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
   *  it under the terms of the GNU Affero General Public License as
@@ -83,6 +84,17 @@
               <?php } else { ?>
                 <a href="/tools/upgrade" title="<?php echo T_('Upgrade') ?>" style="color: #fff"><i class="icon-download-alt icon-white" style="margin: 2px 6px 0 0"></i><span class="label label-info"><?php echo $_SESSION['upgradeNumber'] ?></span></a>
               <?php } ?>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="icon-flag icon-white" style="margin: 2px 6px 0 0"></i>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li<?php if($locale == 'en') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'en', array('redirect_to' => request_uri())); ?>"><?php echo T_('English') ?></a></li>
+                  <li<?php if($locale == 'fr') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'fr', array('redirect_to' => request_uri())); ?>"><?php echo T_('French') ?></a></li>
+                </ul>
               </li>
               <li class="divider-vertical"></li>
               <li class="">

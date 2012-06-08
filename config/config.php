@@ -19,44 +19,10 @@
   */
   
 
-# ============================================================================ #
-#    1. SET HOST & LDAP                                                        #
-# ============================================================================ #
-
-if (!isset($_SESSION['domain']))
-  $_SESSION['domain'] = exec('hostname -d');
-
-$ldap = new YunohostLdap('localhost', $_SESSION['domain'], dirname(__FILE__).'/../models');
 
 
 # ============================================================================ #
-#    1. LOCALE                                                                 #
-# ============================================================================ #
- 
-if (!isset($_SESSION['locale'])) {
-  $locale = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-  $_SESSION['locale'] = strtolower(substr(chop($locale[0]),0,2));
-}
-
-$textdomain="yunohost";
-putenv('LANGUAGE='.$_SESSION['locale']);
-putenv('LANG='.$_SESSION['locale']);
-putenv('LC_ALL='.$_SESSION['locale']);
-putenv('LC_MESSAGES='.$_SESSION['locale']);
-T_setlocale(LC_ALL,$_SESSION['locale']);
-T_setlocale(LC_CTYPE,$_SESSION['locale']);
-$locales_dir = dirname(__FILE__).'/../i18n';
-T_bindtextdomain($textdomain,$locales_dir);
-T_bind_textdomain_codeset($textdomain, 'UTF-8'); 
-T_textdomain($textdomain);
-
-// Set the $locale variable in template
-set('locale', $_SESSION['locale']);
-
-
-
-# ============================================================================ #
-#    2. CONFIGURE LIMONADE'S OPTION                                            #
+#    1. CONFIGURE LIMONADE'S OPTION                                            #
 # ============================================================================ #
 
 function configure()
@@ -83,13 +49,46 @@ function not_found($errno, $errstr, $errfile=null, $errline=null)
 
 
 # ============================================================================ #
-#    3. BEFORE ROUTING                                                         #
+#    2. BEFORE ROUTING                                                         #
 # ============================================================================ #
 
 function before($route)
 {
   global $config;
   global $ldap;
+
+  /**
+   * Set host & ldap
+   */
+
+  if (!isset($_SESSION['domain']))
+    $_SESSION['domain'] = exec('hostname -d');
+
+  $ldap = new YunohostLdap('localhost', $_SESSION['domain'], dirname(__FILE__).'/../models');
+
+
+  /**
+   * Locale
+   */
+  if (!isset($_SESSION['locale'])) {
+    $locale = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    $_SESSION['locale'] = strtolower(substr(chop($locale[0]),0,2));
+  }
+
+  $textdomain="yunohost";
+  putenv('LANGUAGE='.$_SESSION['locale']);
+  putenv('LANG='.$_SESSION['locale']);
+  putenv('LC_ALL='.$_SESSION['locale']);
+  putenv('LC_MESSAGES='.$_SESSION['locale']);
+  T_setlocale(LC_ALL,$_SESSION['locale']);
+  T_setlocale(LC_CTYPE,$_SESSION['locale']);
+  $locales_dir = dirname(__FILE__).'/../i18n';
+  T_bindtextdomain($textdomain,$locales_dir);
+  T_bind_textdomain_codeset($textdomain, 'UTF-8'); 
+  T_textdomain($textdomain);
+
+  // Set the $locale variable in template
+  set('locale', $_SESSION['locale']);
 
   /**
    * Authenticate
