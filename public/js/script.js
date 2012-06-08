@@ -120,7 +120,7 @@ jQuery(document).ready(function() {
 	});
 
 	jQuery("#upgrade-li a").live('click', function() {
-		html = '<a href="#" title="" style="color: #fff; height: 10px; margin-top: 3px;" id="check-upgrades"><img src="/public/img/ajax-loader-white.gif" /></a>';
+		html = '<a href="#" title="" style="color: #fff" id="check-upgrades"><img src="/public/img/ajax-loader-white.gif" /></a>';
 		jQuery('#upgrade-li').html(html);
 		jQuery.get('/tools/upgrade/number', function(data) {
 				jQuery("#upgrade-li").html(data);

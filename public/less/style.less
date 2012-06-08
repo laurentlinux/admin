@@ -1,4 +1,4 @@
-@import "bootstrap/bootstrap.less";
+@import "bootstrap.min.less";
 
 html {
   background-color: white;
@@ -16,13 +16,18 @@ body p {
 	font-family: 'Roboto';
 }
 
-@import "bootstrap/responsive.less";
 @import "fonts.less";
 
 
 /* ===== Primary Styles ========================================================
    Author: Kload
    ========================================================================== */
+
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+   -webkit-box-shadow: @shadow;
+   -moz-box-shadow: @shadow;
+    box-shadow: @shadow;
+}
 
 footer {
 	text-align: center;
@@ -105,4 +110,8 @@ input, textarea, select, .uneditable-input {
 
 label {
 	color: #666;
+}
+
+body .row-fluid [class*="span"] {
+    min-height: 18px;
 }

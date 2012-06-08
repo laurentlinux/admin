@@ -2,7 +2,8 @@
 
  /**
   *  YunoHost - Self-hosting for all
-  *  Copyright (C) 2012  Kload <kload@kload.fr>
+  *  Copyright (C) 2012  
+  *     Kload <kload@kload.fr>
   *     Guillaume DOTT <github@dott.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
@@ -151,12 +152,7 @@
 <script>window.jQuery || document.write('<script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
 <!-- scripts concatenated and minified via ant build script-->
-<script src="<?php echo PUBLIC_DIR ?>/js/libs/bootstrap/transition.js"></script>
-<script src="<?php echo PUBLIC_DIR ?>/js/libs/bootstrap/collapse.js"></script>
-<script src="<?php echo PUBLIC_DIR ?>/js/libs/bootstrap/modal.js"></script>
-<script src="<?php echo PUBLIC_DIR ?>/js/libs/bootstrap/dropdown.js"></script>
-<script src="<?php echo PUBLIC_DIR ?>/js/libs/bootstrap/alert.js"></script>
-
+<script src="<?php echo PUBLIC_DIR ?>/js/libs/bootstrap/bootstrap.min.js"></script>
 <script src="<?php echo PUBLIC_DIR ?>/js/plugins.js"></script>
 <script src="<?php echo PUBLIC_DIR ?>/js/script.js"></script>
 
