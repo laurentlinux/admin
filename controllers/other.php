@@ -30,9 +30,9 @@ function home() {
  * GET /logout
  */
 function logout() {
-  header('WWW-Authenticate: Basic realm="Restricted administration"');
-  header('HTTP/1.0 401 Unauthorized');
-  echo T_('You must identify yourself to access to this page.');
+  $_SESSION['isConnected'] = false;
+
+  redirect_to('/user/list');
   exit;
 }
 

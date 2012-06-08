@@ -95,8 +95,9 @@ function before($route)
    * Authenticate
    */
   function authenticate() {
-    header('WWW-Authenticate: Basic realm="Restricted administration"');
+    header('WWW-Authenticate: Basic realm="'.T_('admin OR username / password').'"');
     header('HTTP/1.0 401 Unauthorized');
+    header('Content-Type: text/html; charset=UTF-8');
     echo T_('You must identify yourself to access to this page.');
     exit;
   }
@@ -108,7 +109,9 @@ function before($route)
     //header("X-LIM-route-function: ".$route['function']);
     header("X-LIM-route-params: ".json_encode($route['params']));
     header("X-LIM-route-options: ".json_encode($route['options']));
-    
+
+    $_SESSION['isConnected'] = true;
+
     /**
      * Extract category from URI
      */
@@ -128,20 +131,24 @@ function before($route)
   /**
    * Check authentcation
    */
+  if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == false) authenticate();
+
   if (isset($_SERVER['PHP_AUTH_USER'])) {
-    if ($ldap->connect(array('cn' => $_SERVER['PHP_AUTH_USER']), $_SERVER['PHP_AUTH_PW'])) {
-      if (!$ldap->backgroundInstalled()) {
-        if ($ldap->installBackground()) {
-          flash('success', T_('Please add a new user to complete setup.'));
-          redirect_to('/user/add');
-        }          
-      }        
-      continueRouting($route);
-    } elseif ($ldap->connectAs($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'], true)) {
-      continueRouting($route);
-    } else {
-      authenticate();
-    }
+    if (!isset($_SESSION['isConnected']) || $_SESSION['isConnected'] == false) {
+      if ($ldap->connect(array('cn' => $_SERVER['PHP_AUTH_USER']), $_SERVER['PHP_AUTH_PW'])) {
+        if (!$ldap->backgroundInstalled()) {
+          if ($ldap->installBackground()) {
+            flash('success', T_('Please add a new user to complete setup.'));
+            redirect_to('/user/add');
+          }          
+        }       
+        continueRouting($route);
+      } elseif ($ldap->connectAs($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'], true)) {
+        continueRouting($route);
+      } else {
+        authenticate();
+      }
+    } else continueRouting($route);
   } else authenticate();
 }
 
@@ -152,11 +159,11 @@ function before($route)
 
 function after($output, $route)
 {
-  // $time = number_format( (float)substr(microtime(), 0, 10) - LIM_START_MICROTIME, 6);
-  // $output .= "\n<!-- page rendered in $time sec., on ".date(DATE_RFC822)." -->\n";
-  // $output .= "<!-- for route\n";
-  // $output .= print_r($route, true);
-  // $output .= "-->";
+  $time = number_format( (float)substr(microtime(), 0, 10) - LIM_START_MICROTIME, 6);
+  $output .= "\n<!-- page rendered in $time sec., on ".date(DATE_RFC822)." -->\n";
+  $output .= "<!-- for route\n";
+  $output .= print_r($route, true);
+  $output .= "-->";
   return $output;
 }
 
