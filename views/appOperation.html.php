@@ -25,7 +25,7 @@
 			<div><?php echo $line ?></div>
 		<?php } ?>
 		<br />
-		<?php if ($errorCode) { ?>
+		<?php if (!$errorCode) { ?>
 			<div style="color: green"><strong><?php echo T_('Success !') ?></strong></div>
 		<?php } else { ?>
 			<div style="color: red"><strong><?php echo T_('Failed !') ?></strong></div>
