@@ -71,6 +71,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="/tools/monitor"><?php echo T_('System monitor') ?></a></li>
                   <li><a href="/tools/chat"><?php echo T_('Support chat') ?></a></li>
+                  <li><a href="/tools/upgrade"><?php echo T_('Upgrade system') ?></a></li>
                 </ul>
               </li>
               <li class="divider-vertical"></li>

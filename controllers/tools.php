@@ -98,9 +98,9 @@ function systemMonitor () {
   }
   $report = array();
   $svcs = array('22'=>'SSH',
-                '25'=>'SMTP',
                 '80'=>'HTTP',
-                '143'=>'IMAP',
+                '143'=>'Mail',
+                '5269' => 'XMPP',
                 '3306'=>'MySQL');
   foreach ($svcs as $port=>$service) {
     $report[$service] = checkPort($port);
