@@ -27,7 +27,7 @@
 					<div class="avatar span2">
 						<img src="<?php echo PUBLIC_DIR ?>/img/app.jpg" />
 					</div>
-					<div class="span">
+					<div class="entityInfo">
 						<strong><?php echo ucfirst($app); ?></strong> 
 						<?php if (isset($upgradableApps[$app])) { ?>
 							 - <span style="color: blue">Upgradable</span>

@@ -19,7 +19,7 @@
   */
 
  ?>
- <form action="/user/password/<?php echo $uid ?>" method="post" class="row row-tab useradd">
+ <form action="/user/password/<?php echo $uid ?>" method="post" class="row row-tab entityForm">
 	<input type="hidden" name="_method" value="PUT" id="_method">
 	<div class="span6">
 		<div class="well">

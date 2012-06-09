@@ -19,7 +19,7 @@
   */
 
  ?>
- <form action="/user/add" method="post" class="row row-tab useradd">
+ <form action="/user/add" method="post" class="row row-tab entityForm">
 	<div class="span6">
 		<div class="well">
 			<h3 class="center"><?php echo T_('User informations') ?></h3>

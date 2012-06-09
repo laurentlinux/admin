@@ -19,7 +19,7 @@
   */
 
  ?>
- <form action="/tools/upgrade/packages" method="post" class="row row-tab useradd">
+ <form action="/tools/upgrade/packages" method="post" class="row row-tab entityForm">
 	<div class="span6 center well">
 		<h3><?php echo sprintf(T_('You have %s packages to upgrade.'), $number) ?></h3>
     <br />

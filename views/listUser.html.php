@@ -27,7 +27,7 @@
 					<div class="avatar span2">
 						<img src="<?php echo PUBLIC_DIR ?>/img/user.png" />
 					</div>
-					<div class="span">
+					<div class="entityInfo">
 						<?php foreach ($adminsDn as $adminDn) {
 							if (preg_match('#^cn='.$user['cn'].'#', $adminDn)) { ?>
 								<span class="label label-important">Admin</span>&nbsp;
@@ -38,9 +38,9 @@
 						<div class="maillist"><?php echo $user['mail']; ?></div>
 					</div>
 					<div class="span1" style="margin-left: 3px; width: 55px; float: right;">
-						<div style="text-align: right">
-							<a href="/user/update/<?php echo $user['uid']; ?>" title="<?php echo T_('Edit').' '.$user['uid'] ?>" class="btn btn-smallest"><i class="icon-edit"></i></a>
-							<a href="/user/delete/<?php echo $user['uid']; ?>" title="<?php echo T_('Delete').' '.$user['uid'] ?>" class="btn btn-smallest"><i class="icon-trash"></i></a>
+						<div style="text-align: right" class="btn-group">
+							<a href="/user/update/<?php echo $user['uid']; ?>" title="<?php echo T_('Edit').' '.$user['uid'] ?>" class="btn btn-mini"><i class="icon-edit"></i></a>
+							<a href="/user/delete/<?php echo $user['uid']; ?>" title="<?php echo T_('Delete').' '.$user['uid'] ?>" class="btn btn-mini"><i class="icon-trash"></i></a>
 						</div>
 					</div>
 				</div>

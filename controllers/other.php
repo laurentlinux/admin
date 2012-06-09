@@ -2,7 +2,8 @@
 
  /**
   *  YunoHost - Self-hosting for all
-  *  Copyright (C) 2012  Kload <kload@kload.fr>
+  *  Copyright (C) 2012  
+  *     Kload <kload@kload.fr>
   *     Guillaume DOTT <github@dott.fr>
   *
   *  This program is free software: you can redistribute it and/or modify

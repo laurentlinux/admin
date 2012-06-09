@@ -26,11 +26,11 @@ jQuery(document).ready(function() {
 	/**
 	 *	User form ergonomic functions
 	 */
-	jQuery(".useradd #username").blur(function () {
-		jQuery(".useradd #mail").val(jQuery(this).val() + '@' + jQuery(".useradd #domain").val());
+	jQuery(".entityForm #username").blur(function () {
+		jQuery(".entityForm #mail").val(jQuery(this).val() + '@' + jQuery(".entityForm #domain").val());
 	});
-	jQuery(".useradd #domain").change(function () {
-		jQuery(".useradd #mail").val(jQuery(".useradd #username").val() + '@' + jQuery(this).val());
+	jQuery(".entityForm #domain").change(function () {
+		jQuery(".entityForm #mail").val(jQuery(".entityForm #username").val() + '@' + jQuery(this).val());
 	});
 
 
@@ -38,16 +38,16 @@ jQuery(document).ready(function() {
 	 *	User form validation functions
 	 */
 
-	jQuery(".useradd #mail").blur(function() {
+	jQuery(".entityForm #mail").blur(function() {
 		var reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-		if (reg.test(jQuery(this).val()) && jQuery(".useradd #domain").val() == jQuery(this).val().substr(jQuery(this).val().indexOf('@') + 1)) {
+		if (reg.test(jQuery(this).val()) && jQuery(".entityForm #domain").val() == jQuery(this).val().substr(jQuery(this).val().indexOf('@') + 1)) {
 			jQuery(this).css('color', '#555');
 		} else {
 			jQuery(this).css('color', '#E9322D');
 		}
 	});
 
-	jQuery(".useradd .aliasrow").blur(function() {
+	jQuery(".entityForm .aliasrow").blur(function() {
 		var reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 		if (reg.test(jQuery(this).val())) {
 			jQuery(this).css('color', '#555');
@@ -56,7 +56,7 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	jQuery(".useradd #username").blur(function() {
+	jQuery(".entityForm #username").blur(function() {
 		var reg = /^[a-z0-9]{2,20}$/;
 		if (reg.test(jQuery(this).val())) {
 			jQuery(this).css('color', '#555');
@@ -65,7 +65,7 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	jQuery(".useradd #firstname").blur(function() {
+	jQuery(".entityForm #firstname").blur(function() {
 		var reg = /^[a-zA-Z0-9]{2,20}$/;
 		if (reg.test(jQuery(this).val())) {
 			jQuery(this).css('color', '#555');
@@ -74,7 +74,7 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	jQuery(".useradd #lastname").blur(function() {
+	jQuery(".entityForm #lastname").blur(function() {
 		var reg = /^[a-zA-Z0-9]{2,20}$/;
 		if (reg.test(jQuery(this).val())) {
 			jQuery(this).css('color', '#555');
@@ -83,13 +83,13 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	jQuery(".useradd #confirm").blur(function() {
-		if (jQuery(this).val() == jQuery(".useradd #password").val()) {
+	jQuery(".entityForm #confirm").blur(function() {
+		if (jQuery(this).val() == jQuery(".entityForm #password").val()) {
 			jQuery(this).css('color', '#46a546');
-			jQuery(".useradd #password").css('color', '#46a546');
+			jQuery(".entityForm #password").css('color', '#46a546');
 		} else {
 			jQuery(this).css('color', '#E9322D');
-			jQuery(".useradd #password").css('color', '#E9322D');
+			jQuery(".entityForm #password").css('color', '#E9322D');
 		}
 	});
 
@@ -97,11 +97,11 @@ jQuery(document).ready(function() {
 	 *	Add && Remove aliases ui
 	 */
 
-	jQuery(".useradd #addAlias").click(function() {
+	jQuery(".entityForm #addAlias").click(function() {
 		jQuery(".mailrow").last().after('<p class="row mailrow aliasrow">'+jQuery('.parentaliasrow').html()+'</p>');
 	});
 
-	jQuery(".useradd a.removeAlias").live('click', function() {
+	jQuery(".entityForm a.removeAlias").live('click', function() {
 		jQuery(this).closest('.aliasrow').remove();
 	});
 
@@ -109,15 +109,19 @@ jQuery(document).ready(function() {
 	 *	Change password ui
 	 */
 
-	jQuery(".useradd #newPassword2").blur(function() {
-		if (jQuery(this).val() == jQuery(".useradd #newPassword").val()) {
+	jQuery(".entityForm #newPassword2").blur(function() {
+		if (jQuery(this).val() == jQuery(".entityForm #newPassword").val()) {
 			jQuery(this).css('color', '#46a546');
-			jQuery(".useradd #newPassword").css('color', '#46a546');
+			jQuery(".entityForm #newPassword").css('color', '#46a546');
 		} else {
 			jQuery(this).css('color', '#E9322D');
-			jQuery(".useradd #newPassword").css('color', '#E9322D');
+			jQuery(".entityForm #newPassword").css('color', '#E9322D');
 		}
 	});
+
+	/**
+	 *	Upgrade checker & button
+	 */
 
 	jQuery("#upgrade-li a").live('click', function() {
 		html = '<a href="#" title="" style="color: #fff" id="check-upgrades"><img src="/public/img/ajax-loader-white.gif" /></a>';

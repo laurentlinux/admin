@@ -139,7 +139,7 @@
       <footer>
         <span><?php echo T_('Powered by') ?> <a href="http://yunohost.org/">YunoHost</a> (Beta) 
           <div class="btn-group dropup pull-right">
-          <button data-toggle="dropdown" class="btn btn-small dropdown-toggle"><i class="icon-flag" style="margin: 2px 6px 0 0"></i> <span class="caret"></span></button>
+          <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle"><i class="icon-flag"></i> <?php echo T_('Lang') ?> <span class="caret"></span></button>
           <ul class="dropdown-menu pull-right">
             <li<?php if($locale == 'en') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'en', array('redirect_to' => request_uri())); ?>"><?php echo T_('English') ?></a></li>
             <li<?php if($locale == 'fr') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'fr', array('redirect_to' => request_uri())); ?>"><?php echo T_('French') ?></a></li>

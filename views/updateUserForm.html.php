@@ -19,7 +19,7 @@
   */
 
  ?>
-<form action="/user/update/<?php echo $user['uid'] ?>" method="post" class="row row-tab useradd">
+<form action="/user/update/<?php echo $user['uid'] ?>" method="post" class="row row-tab entityForm">
 	<input type="hidden" name="_method" value="PUT" id="_method">
 	<input type="hidden" name="user" value="<?php echo $name ?>" id="user">
 	<div class="span6">

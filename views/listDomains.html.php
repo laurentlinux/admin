@@ -20,7 +20,7 @@
 
  ?>
 
-<form action="/domain/update" method="post" class="row row-tab useradd">
+<form action="/domain/update" method="post" class="row row-tab entityForm">
 	<input type="hidden" name="_method" value="PUT" id="_method">
 	<?php foreach ($domains as $domain) { ?>
   		<input type="hidden" name="actualDomains[]" value="<?php echo $domain['virtualdomain'] ?>">

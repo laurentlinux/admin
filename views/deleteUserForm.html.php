@@ -19,7 +19,7 @@
   */
 
  ?>
- <form action="/user/delete" method="post" class="row row-tab useradd">
+ <form action="/user/delete" method="post" class="row row-tab entityForm">
 	<input type="hidden" name="_method" value="DELETE" id="_method">
 	<input type="hidden" name="user" value="<?php echo $username ?>" id="user">
 	<div class="span6 center well">

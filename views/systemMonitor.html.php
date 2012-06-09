@@ -81,8 +81,8 @@
 							<a class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i></a>
 						<?php } ?>
 					</div>
-					<div class="span" style="margin-left: 0;margin-top: 4px;"><strong><?php echo $service ?></strong></div>
-					<div class="span" style="margin-left: 3px; float: right;">
+					<div class="entityInfo" style="margin-left: 0;margin-top: 4px;"><strong><?php echo $service ?></strong></div>
+					<div class="entityInfo" style="margin-left: 3px; float: right;">
 						<div style="text-align: right">
 							<a title="<?php echo T_('Log') ?>" class="btn btn-small disabled"><i class="icon-list-alt"></i> <?php echo T_('Log') ?></a>
 							<?php if (!$running) { ?>
