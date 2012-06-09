@@ -72,6 +72,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a href="/tools/monitor"><?php echo T_('System monitor') ?></a></li>
+                  <li><a href="<?php echo url_for('tools', 'tasks'); ?>"><?php echo T_('Tasks manager') ?></a></li>
                   <li><a href="/tools/chat"><?php echo T_('Support chat') ?></a></li>
                   <li><a href="/tools/upgrade"><?php echo T_('Upgrade system') ?></a></li>
                 </ul>
@@ -148,8 +149,17 @@
       </footer>
 
     </div> <!-- /container -->
+<script type="text/javascript">
+  // i18n
+        var dataTable_i18n = {
+          "sSearch": "<?php echo T_("Search:"); ?>",
+          "sInfo": "<?php echo T_("Showing _START_ to _END_ of _TOTAL_"); ?>",
+          "sInfoFiltered": "<?php echo T_("(filtered from _MAX_ total entries)"); ?>",
+        };
+</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+<script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery.dataTables.min.js"></script>
 
 <!-- scripts concatenated and minified via ant build script-->
 <script src="<?php echo PUBLIC_DIR ?>/js/libs/bootstrap/bootstrap.min.js"></script>
