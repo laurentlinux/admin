@@ -106,7 +106,7 @@ function systemMonitor () {
     $report[$service] = checkPort($port);
   }
 
-  $globalIP = exec('curl ifconfig.me');
+  $globalIP = file_get_contents('http://ip.yunohost.org');
   $localIP = exec('/sbin/ifconfig | sed \'/Bcast/!d\' | awk \'{print $2}\'| awk \'{print $2}\' FS=":"');
   $macAddr = exec('/sbin/ifconfig | awk \'/HWaddr/ {print $5}\'');
   exec('/usr/bin/top -b -n 1 -i', $top);

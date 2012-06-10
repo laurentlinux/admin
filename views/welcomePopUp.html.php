@@ -88,7 +88,7 @@
                 <div class="tab-pane" id="tab3">
                   <h4><?php echo T_('Configure your DNS entries like this:') ?></h4>
                   <br />
-                  <?php $ip = exec('curl ifconfig.me'); ?>
+                  <?php $ip = file_get_contents('http://ip.yunohost.org'); ?>
                   <pre>
 <?php echo $domain ?>          (<?php echo T_('type') ?> A)           <?php echo $ip ?>
 
