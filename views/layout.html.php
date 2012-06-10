@@ -157,6 +157,15 @@
       </footer>
 
     </div> <!-- /container -->
+
+<script type="text/javascript">
+  // i18n
+  var dataTable_i18n = {
+    "sSearch": "<i class='icon-search' style='z-index: 100'></i>",
+    "sInfo": "<?php echo T_('Showing _START_ to _END_ of _TOTAL_'); ?>",
+    "sInfoFiltered": "<?php echo T_('(filtered from _MAX_ total entries)'); ?>",
+  };
+</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 <script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery.dataTables.min.js"></script>

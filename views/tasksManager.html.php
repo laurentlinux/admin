@@ -44,11 +44,3 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">
-    // i18n
-    var dataTable_i18n = {
-      "sSearch": "<i class='icon-search' style='z-index: 100'></i>",
-      "sInfo": "<?php echo T_('Showing _START_ to _END_ of _TOTAL_'); ?>",
-      "sInfoFiltered": "<?php echo T_('(filtered from _MAX_ total entries)'); ?>",
-    };
-  </script>
