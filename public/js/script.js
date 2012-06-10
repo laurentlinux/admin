@@ -23,6 +23,19 @@ jQuery(document).ready(function() {
 
 	jQuery(".hidden").hide();
 
+        /**
+         * jQuery dataTables plugin with tweaks for bootstrap 2 compatibility
+         * http://datatables.net/blog/Twitter_Bootstrap_2
+         */
+        jQuery("table.table-sortable").dataTable({
+          "oLanguage": dataTable_i18n,
+          "bPaginate": false,
+          "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>"
+        });
+        jQuery.extend( jQuery.fn.dataTableExt.oStdClasses, {
+          "sWrapper": "dataTables_wrapper form-inline"
+        } );
+
 	/**
 	 *	User form ergonomic functions
 	 */

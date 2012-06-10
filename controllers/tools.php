@@ -137,6 +137,24 @@ function systemMonitor () {
 }
 
 /**
+ * GET /tools/monitor
+ */
+function tasksManager() {
+  function ps_explode($line) {
+    return explode(" ", $line, 11);
+  }
+
+  exec("ps aux | tr -s ' '", $tasks);
+  $tasks = array_map('ps_explode', $tasks);
+
+  set('tasks_head', array_shift($tasks));
+  set('tasks', $tasks);
+
+  set('title', T_('Tasks manager'));
+  return render("tasksManager.html.php");
+}
+
+/**
  * GET /tools/upgrade/number (AJAX access only)
  */
 function getUpgradeNumber () {
