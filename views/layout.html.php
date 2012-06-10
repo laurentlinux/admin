@@ -56,6 +56,9 @@
           <a class="brand" href="/"><img src="<?php echo PUBLIC_DIR ?>/img/logo.png"></a>
           <div class="nav-collapse">
             <ul class="nav pull-right">
+              <li class="<?php echo ($tab == 'home') ? 'active' : '' ?>">
+                <a href="/"><i class="icon-home icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Home') ?></a>
+              </li>
               <li class="<?php echo ($tab == 'user') ? 'active' : '' ?>">
                 <a href="/user/list"><i class="icon-user icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Users') ?></a>
               </li>
@@ -106,6 +109,7 @@
 
       <ul class="breadcrumb">
         <li>
+          <?php echo ($tab == 'home') ? '<a href="/">'.T_('Home').'</a>' : '' ?> 
           <?php echo ($tab == 'user') ? '<a href="/user">'.T_('Users').'</a>' : '' ?> 
           <?php echo ($tab == 'domain') ? '<a href="/domain">'.T_('Domains').'</a>' : '' ?>
           <?php echo ($tab == 'app') ? '<a href="/app">'.T_('Applications').'</a>' : '' ?> 
@@ -139,12 +143,16 @@
       <footer>
         <span><?php echo T_('Powered by') ?> <a href="http://yunohost.org/">YunoHost</a> (Beta) 
           <div class="btn-group dropup pull-right">
-          <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle"><i class="icon-flag"></i> <?php echo T_('Lang') ?> <span class="caret"></span></button>
-          <ul class="dropdown-menu pull-right">
-            <li<?php if($locale == 'en') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'en', array('redirect_to' => request_uri())); ?>"><?php echo T_('English') ?></a></li>
-            <li<?php if($locale == 'fr') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'fr', array('redirect_to' => request_uri())); ?>"><?php echo T_('French') ?></a></li>
-          </ul>
-        </div></span>
+            <button data-toggle="dropdown" class="btn btn-mini" style="height: 20px;"><i class="icon-flag"></i> <?php echo T_('Lang') ?></button>
+            <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li<?php if($locale == 'en') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'en', array('redirect_to' => request_uri())); ?>"><?php echo T_('English') ?></a></li>
+              <li<?php if($locale == 'fr') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'fr', array('redirect_to' => request_uri())); ?>"><?php echo T_('French') ?></a></li>
+            </ul>
+          </div>
+        </span>
       </footer>
 
     </div> <!-- /container -->

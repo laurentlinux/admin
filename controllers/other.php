@@ -25,7 +25,9 @@
  * GET /
  */
 function home() {
-  redirect_to('/user/list');
+  set('tab', 'home');
+  set('title', T_('Welcome !'));
+  return render("homepage.html.php");
 }
 
 /**
