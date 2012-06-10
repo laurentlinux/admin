@@ -26,11 +26,11 @@
           <div class="modal-body">
             <div class="tabbable"> 
               <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab1" data-toggle="tab">Introduction</a></li>
-                <li><a href="#tab2" data-toggle="tab">First user</a></li>
-                <li><a href="#tab3" data-toggle="tab">DNS</a></li>
-                <li><a href="#tab4" data-toggle="tab">Router</a></li>
-                <li><a href="#tab5" data-toggle="tab">Help ?</a></li>
+                <li class="active"><a href="#tab1" data-toggle="tab"><?php echo T_('Introduction') ?></a></li>
+                <li><a href="#tab2" data-toggle="tab"><?php echo T_('First user') ?></a></li>
+                <li><a href="#tab3" data-toggle="tab"><?php echo T_('DNS') ?></a></li>
+                <li><a href="#tab4" data-toggle="tab"><?php echo T_('Router') ?></a></li>
+                <li><a href="#tab5" data-toggle="tab"><?php echo T_('Help ?') ?></a></li>
               </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
