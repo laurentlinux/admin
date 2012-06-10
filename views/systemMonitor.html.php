@@ -74,14 +74,14 @@
 		<div class="span6">
 			<div class="well">
 				<div class="row">
-					<div class="span1">
+					<div class="span">
 						<?php if ($running) { ?>
 							<a class="btn btn-small btn-success"><i class="icon-ok icon-white"></i></a>
 						<?php } else { ?>
 							<a class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i></a>
 						<?php } ?>
 					</div>
-					<div class="entityInfo" style="margin-left: 0;margin-top: 4px;"><strong><?php echo $service ?></strong></div>
+					<div class="entityInfo" style="margin-top: 4px;"><strong><?php echo $service ?></strong></div>
 					<div class="entityInfo" style="margin-left: 3px; float: right;">
 						<div style="text-align: right">
 							<a title="<?php echo T_('Log') ?>" class="btn btn-small disabled"><i class="icon-list-alt"></i> <?php echo T_('Log') ?></a>

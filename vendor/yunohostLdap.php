@@ -128,7 +128,7 @@ class YunoHostLdap extends LdapEntry
 
 		$_SESSION['first-install'] = true;
 
-		redirect_to('/user/add');
+		redirect_to('/');
 	}
 
 	public function backgroundInstalled() 

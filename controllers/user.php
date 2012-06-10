@@ -65,6 +65,8 @@ function addUser () {
 
   $_SESSION['first-install'] = false;
 
+  $ajax = isset($_POST["ajax"]);
+
   $username = htmlspecialchars($_POST["username"]);
   $password = '{MD5}'.base64_encode(pack('H*',md5($_POST["password"])));
   $firstname = htmlspecialchars($_POST["firstname"]);
@@ -87,13 +89,15 @@ function addUser () {
       flash('success', T_('User succefully created.'));
       $mailMessage = T_('Username:').' '.$username."\n".T_('Password:').' '.$_POST["password"];
       sendMail($mail, T_('Your account details'), $mailMessage);
-      redirect_to('/user/list');
+      if ($ajax) return true; 
+      else redirect_to('/user/list');
     } 
     else flash('error', T_('An error occured on user creation.'));
   }
   else flash('error', T_('Passwords does not match'));
 
-  redirect_to('/user/add');  
+  if ($ajax) return true; 
+  else redirect_to('/user/add');  
 }
 
 

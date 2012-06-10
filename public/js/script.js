@@ -39,6 +39,7 @@ jQuery(document).ready(function() {
 	/**
 	 *	User form ergonomic functions
 	 */
+
 	jQuery(".entityForm #username").blur(function () {
 		jQuery(".entityForm #mail").val(jQuery(this).val() + '@' + jQuery(".entityForm #domain").val());
 	});
@@ -152,6 +153,38 @@ jQuery(document).ready(function() {
 		jQuery.get('/tools/upgrade/packages', function(data) {
 			jQuery("#upgrade-result").html(data);
 		});
+	});
+
+	/**
+	 *	Welcome pop-up
+	 */
+
+	jQuery(".btn-change-tab").click(function() {
+		jQuery('.nav-tabs .active').removeClass('active');
+		href = jQuery(this).attr('href');
+		jQuery(".nav-tabs a:[href='"+href+"']").parent().toggleClass('active');
+	});
+
+	jQuery("#ajaxAddUser").submit(function(event) {
+	    event.preventDefault(); 	        
+	    jQuery.post( "/user/add", { 
+	    	ajax: "true",
+	    	username: jQuery("#username").val(),
+	    	password: jQuery("#password").val(),
+	    	confirm: jQuery("#confirm").val(),
+	    	firstname: jQuery("#firstname").val(),
+	    	lastname: jQuery("#lastname").val(),
+	    	mail: jQuery("#mail").val(),
+	    	isadmin: jQuery("#isadmin").val()
+	    	}, 
+	    	function( data ) {
+	         if (data == 1) {
+	         	jQuery('#nextUser').fadeIn();
+	         	jQuery('.btn-submit').removeClass('btn-primary').removeClass('btn-danger').addClass('btn-success').after('<i class="icon-ok" style="margin: 2px 0 0 6px"></i>');
+	         } else {
+	         	jQuery('.btn-submit').removeClass('btn-primary').removeClass('btn-success').addClass('btn-danger').after('<i class="icon-remove" style="margin: 2px 0 0 6px"></i>');
+	         }
+	    });
 	});
 
 });
