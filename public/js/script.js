@@ -168,14 +168,14 @@ jQuery(document).ready(function() {
 	jQuery("#ajaxAddUser").submit(function(event) {
 	    event.preventDefault(); 	        
 	    jQuery.post( "/user/add", { 
-	    	ajax: "true",
+	    	ajax: true,
 	    	username: jQuery("#username").val(),
 	    	password: jQuery("#password").val(),
 	    	confirm: jQuery("#confirm").val(),
 	    	firstname: jQuery("#firstname").val(),
 	    	lastname: jQuery("#lastname").val(),
 	    	mail: jQuery("#mail").val(),
-	    	isadmin: jQuery("#isadmin").val()
+	    	isadmin: true
 	    	}, 
 	    	function( data ) {
 	         if (data == 1) {

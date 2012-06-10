@@ -77,13 +77,7 @@
                       <label class="span2 labeluser" for="mail"><?php echo T_('Mail') ?> <span style="color: red">*</span></label>
                       <input class="span3" type="text" name="mail" id="mail" required />
                     </p>        
-                    <p class="row">
-                      <div class="span3">
-                        <label class="span2 labeladmin" style="text-align: right" for="isadmin"><strong><?php echo T_('Administrator') ?></strong></label>
-                        <input class="span1" style="margin: 2px 0 0 10px;" type="checkbox" name="isadmin" id="isadmin" />
-                      </div>
-                    </p>
-                    <p><input type="submit" value="<?php echo T_('Save user') ?>" class="btn btn-primary btn-submit"></p>
+                    <p class="center"><input type="submit" value="<?php echo T_('Save user') ?>" class="btn btn-primary btn-submit"></p>
                     <div style="clear: both;"></div>
                     <hr />
                     <a href="#tab1" class="btn btn-primary pull-left btn-change-tab" data-toggle="tab"><i class="icon-white icon-chevron-left" style="margin: 2px 6px 0 0"></i><?php echo T_('Previous') ?></a>
