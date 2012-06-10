@@ -102,7 +102,7 @@
 
     <div class="container">
 
-      <?php if (true) { 
+      <?php if (isset($_SESSION['first-install']) && $_SESSION['first-install']) { 
         include 'welcomePopUp.html.php';
       } ?>
 
