@@ -44,7 +44,7 @@
 			</div>
 			<div class="row-fluid">
 				<div class="span3 right" style="width: 22%"><?php echo T_('Tasks') ?></div>
-				<div class="span8" style="float: right; width: 74%"><?php echo $tasks[0] ?></div>
+				<div class="span8" style="float: right; width: 74%"><a href="/tools/tasks"><?php echo $tasks[0] ?></a></div>
 			</div>
 		</div>
 	</div>
