@@ -65,7 +65,7 @@ function addUser () {
 
   $_SESSION['first-install'] = false;
 
-  $ajax = isset($_POST["ajax"]);
+  $ajax = isset($_POST['ajax']);
 
   $username = htmlspecialchars($_POST["username"]);
   $password = '{MD5}'.base64_encode(pack('H*',md5($_POST["password"])));
@@ -96,7 +96,7 @@ function addUser () {
   }
   else flash('error', T_('Passwords does not match'));
 
-  if ($ajax) return true; 
+  if ($ajax) return false; 
   else redirect_to('/user/add');  
 }
 

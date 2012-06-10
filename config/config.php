@@ -132,10 +132,10 @@ function before($route)
    * Check authentcation
    */
   if (isset($_SERVER['PHP_AUTH_USER'])) {
-    if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
-      continueRouting($route);
-    } elseif (!isset($_SESSION['isConnected'])) {
-      if ($ldap->connect(array('cn' => $_SERVER['PHP_AUTH_USER']), $_SERVER['PHP_AUTH_PW'])) {
+    if ($ldap->connect(array('cn' => $_SERVER['PHP_AUTH_USER']), $_SERVER['PHP_AUTH_PW'])) {
+      if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true) {
+        continueRouting($route);
+      } elseif (!isset($_SESSION['isConnected'])) {
         if (!$ldap->backgroundInstalled()) {
           if ($ldap->installBackground()) {
             flash('success', T_('Please add a new user to complete setup.'));
@@ -143,12 +143,12 @@ function before($route)
           }          
         }       
         continueRouting($route);
-      } elseif ($ldap->connectAs($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'], true)) {
-        continueRouting($route);
-      } else {
-        authenticate();
-      }
-    } else authenticate();
+      } else authenticate();
+    } elseif ($ldap->connectAs($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'], true)) {
+      continueRouting($route);
+    } else {
+      authenticate();
+    }
   } else authenticate();
 }
 
