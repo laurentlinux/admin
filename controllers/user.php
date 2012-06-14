@@ -67,6 +67,7 @@ function addUser () {
 
   $ajax = isset($_POST['ajax']);
 
+  $domain = htmlspecialchars($_POST["domain"]);
   $username = htmlspecialchars($_POST["username"]);
   $password = '{MD5}'.base64_encode(pack('H*',md5($_POST["password"])));
   $firstname = htmlspecialchars($_POST["firstname"]);
@@ -87,8 +88,21 @@ function addUser () {
     {
       if ($admin) $ldap->grantAdmin($username);
       flash('success', T_('User succefully created.'));
+
+      $welcomeMessage = T_('Welcome aboard! Here is your login and password to connect to your apps.');
+      $welcomeMessage2 = T_('If you want to change your password, click on the link below:');
+
       $mailMessage = T_('Username:').' '.$username."\n".T_('Password:').' '.$_POST["password"];
-      sendMail($mail, T_('Your account details'), $mailMessage);
+      $htmlMessage = '<img src="http://wiki.yunohost.org/skins/common/images/cloud.png" />'.
+                      '<br />'.
+                      '<p>'.$welcomeMessage.'</p>'.
+                      '<br />'.
+                      '<div><strong>'.T_('Username:').'</strong> '.$username."</div>\n
+                      <div><strong>".T_('Password:').'</strong> '.$_POST["password"].'</div>'.
+                      '<br />'.
+                      '<p>'.$welcomeMessage2.'</p>'.
+                      '<a href="https://auth.'.$domain.'">https://auth.'.$domain.'</a>';
+      sendMail($mail, T_('Your account details'), $mailMessage, $htmlMessage);
       if ($ajax) return true; 
       else redirect_to('/user/list');
     } 
