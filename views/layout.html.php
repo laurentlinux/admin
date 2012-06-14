@@ -36,10 +36,10 @@
 
 	<meta name="viewport" content="width=device-width">
   <!-- LESS for development -->
-	<link rel="stylesheet/less" href="<?php echo PUBLIC_DIR ?>/less/style.less">
+	<!-- <link rel="stylesheet/less" href="<?php echo PUBLIC_DIR ?>/less/style.less"> -->
 	<script src="<?php echo PUBLIC_DIR ?>/js/libs/less-1.2.1.min.js"></script>
   <!-- CSS for production -->
-  <!-- <link media="all" type="text/css" href="<?php echo PUBLIC_DIR ?>/css/style.css" rel="stylesheet"> -->
+  <link media="all" type="text/css" href="<?php echo PUBLIC_DIR ?>/css/style.css" rel="stylesheet">
 	<script src="<?php echo PUBLIC_DIR ?>/js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body class="gradient">
