@@ -73,7 +73,7 @@
                   <i class="icon-wrench icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Tools') ?>
                   <b class="caret"></b>
                 </a>
-                <ul class="dropdown-menu" style="text-align: right">
+                <ul class="dropdown-menu">
                   <li><a href="/tools/monitor"><?php echo T_('System monitor') ?></a></li>
                   <li><a href="<?php echo url_for('tools', 'tasks'); ?>"><?php echo T_('Tasks manager') ?></a></li>
                   <li><a href="/tools/chat"><?php echo T_('Support chat') ?></a></li>
@@ -148,7 +148,7 @@
             <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu pull-right" style="text-align: right">
+            <ul class="dropdown-menu pull-right" style="text-align: left">
               <li<?php if($locale == 'en') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'en', array('redirect_to' => request_uri())); ?>"><?php echo T_('English') ?></a></li>
               <li<?php if($locale == 'fr') echo ' class="active"'; ?>><a href="<?php echo url_for('lang', 'fr', array('redirect_to' => request_uri())); ?>"><?php echo T_('French') ?></a></li>
             </ul>
