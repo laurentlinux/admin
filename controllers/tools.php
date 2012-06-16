@@ -19,31 +19,59 @@
   */
 
 /**
- * GET /tools/log/:logFile
+ * GET /tools/log/:service
  */
-function watchLog ($logFile = null) {
-  if(empty($logFile)) halt(NOT_FOUND, "Undefined name.");
+function watchLog ($service = null) {
+  if(empty($service)) halt(NOT_FOUND, T_('Undefined service.'));
 
-  switch ($logFile) {
-    case 'apache-admin':
-      $logFile = '/var/log/apache2/admin-error.log';
-      //$logFile = '/var/log/apache2/admin-error.log';
+  switch ($service) {
+    case 'HTTP':
+      $logFile = '/var/log/apache2/error.log';
       break;
     
-    case 'apache-im':
-      $logFile = '/var/log/apache2/im-error.log';
+    case 'XMPP':
+      $logFile = '/var/log/ejabberd/ejabberd.log';
       break;
+
+    case 'SSH':
+      $logFile = '/var/log/auth.log';
+      break;
+    
+    case 'Mail':
+      $logFile = '/var/log/mail.err';
+      break;
+
+    case 'MySQL':
+      $logFile = '/var/log/mysql.err';
+      break;
+    
+    case 'FTP':
+      $logFile = '/var/log/proftpd/proftpd.log';
+      break;  
+
+    // case 'Radicale':
+    //   $logFile = '/var/log/?';
+    //   break;
     
     default:
-      $logFile = '/tmp/yayaya';
+      $logFile = false;
+      // $logFile = false;
       break;
   }
 
-  $log = read_file($logFile, 10);
+  if ($logFile) {
+    exec('sudo yunohost cp-log '.$logFile);
+    $log = read_file('/tmp/readlog', 10);
+    // $logSize = round(filesize($logFile)/1024,2);
+    exec('sudo yunohost remove-log');
+  } else {
+    $log = array(T_('There is no log file for this service.'));
+  }
+
   set('title', T_('Log reader'));
   set('log', $log);
   set('logFile', $logFile);
-  set('logSize', round(filesize($logFile)/1024,2));
+  // set('logSize', $logSize);
   return render("log.html.php"); 
 }
 
@@ -103,7 +131,7 @@ function systemMonitor () {
                 '5269' => 'XMPP',
                 '3306'=>'MySQL',
                 '21'=>'FTP',
-                '23'=>'CalDAV / CardDAV',
+                '5232'=>'Radicale',
                 );
   foreach ($svcs as $port=>$service) {
     $report[$service] = checkPort($port);
@@ -115,7 +143,7 @@ function systemMonitor () {
       'XMPP' => 'ejabberd',
       'MySQL' => 'mysqld',
       'FTP' => 'proftpd',
-      'CalDAV / CardDAV' => 'radicale'
+      'Radicale' => 'radicale'
     );
 
   $globalIP = file_get_contents('http://ip.yunohost.org');

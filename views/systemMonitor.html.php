@@ -84,7 +84,7 @@
 					<div class="entityInfo" style="margin-top: 4px;"><strong><?php echo $service ?></strong></div>
 					<div class="entityInfo" style="margin-left: 3px; float: right;">
 						<div style="text-align: right">
-							<a title="<?php echo T_('Log') ?>" class="btn btn-small disabled"><i class="icon-list-alt"></i> <?php echo T_('Log') ?></a>
+							<a title="<?php echo T_('Log') ?>" class="btn btn-small" href="/tools/log/<?php echo $service ?>"><i class="icon-list-alt"></i> <?php echo T_('Log') ?></a>
 							<?php if (array_key_exists($service, $services)) {
 							if (!$running) { ?>
 							<a title="<?php echo T_('Activate') ?>" class="btn btn-small" href="/tools/activate/<?php echo $services[$service] ?>"><i class="icon-ok-sign"></i> <?php echo T_('Activate') ?></a>

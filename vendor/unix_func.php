@@ -19,9 +19,9 @@
   */
   
 function read_file($file, $lines = 20) {
-    //global $fsize;
+
     if (!$handle = fopen($file, "r"))
-        return 'test';
+        return false;
     $linecounter = $lines;
     $pos = -2;
     $beginning = false;

@@ -23,10 +23,10 @@
 <h3>Log : <?php echo($logFile) ?></h3>
 
 <div class="row">
-	<div class="span12"><?php echo($logSize) ?> Ko</div>
+	<!-- <div class="span12"><?php // echo($logSize) ?> Ko</div> -->
 	<div class="span12">
 		<?php foreach ($log as $logLine) { ?>
-			<p><pre><?php echo $logLine ?></pre></p>
+			<p><pre style="font-size: 11px"><?php echo $logLine ?></pre></p>
 		<?php } ?>
 	</div>
 </div>
