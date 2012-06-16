@@ -97,14 +97,26 @@ function systemMonitor () {
     }
   }
   $report = array();
-  $svcs = array('22'=>'SSH',
+  $svcs = array('80'=>'HTTP',
+                '22'=>'SSH',
                 '25'=>'Mail',
-                '80'=>'HTTP',
                 '5269' => 'XMPP',
-                '3306'=>'MySQL');
+                '3306'=>'MySQL',
+                '21'=>'FTP',
+                '23'=>'CalDAV / CardDAV',
+                );
   foreach ($svcs as $port=>$service) {
     $report[$service] = checkPort($port);
   }
+
+  $services = array(
+      'SSH' => 'ssh',
+      'Mail' => 'postfix',
+      'XMPP' => 'ejabberd',
+      'MySQL' => 'mysqld',
+      'FTP' => 'proftpd',
+      'CalDAV / CardDAV' => 'radicale'
+    );
 
   $globalIP = file_get_contents('http://ip.yunohost.org');
   $localIP = exec('/sbin/ifconfig | sed \'/Bcast/!d\' | awk \'{print $2}\'| awk \'{print $2}\' FS=":"');
@@ -123,6 +135,7 @@ function systemMonitor () {
   set('localIP', $localIP);
   set('macAddr', $macAddr);
   set('report', $report);
+  set('services', $services);
   set('summary', $summary);
   set('time', $time);
   set('uptime', $uptime);
@@ -207,4 +220,36 @@ function upgradeAjax () {
   $result = str_replace("\n", "<br />", $result);
   if ($errorCode) $_SESSION['upgradeNumber'] = 0;
   return $result;
+}
+
+/**
+ * GET /tools/activate/:service
+ */
+function activateService ($service) {
+  $service = htmlspecialchars($service);
+  if (!preg_match('/\s/', $service)) {
+    exec('sudo yunohost enable-service '.$service, $out2, $code2);
+    exec('sudo yunohost start-service '.$service, $out1, $code1);
+    if (!$code1 && !$code2)
+      flash('success', $service.' '.T_('succefully enabled.'));
+    else
+      flash('error', $out1."\n".$out2);
+  }
+  redirect_to('/tools/monitor');
+}
+
+/**
+ * GET /tools/deactivate/:service
+ */
+function deactivateService ($service) {
+  $service = htmlspecialchars($service);
+  if (!preg_match('/\s/', $service)) {
+    exec('sudo yunohost disable-service '.$service, $out2, $code2);
+    exec('sudo yunohost stop-service '.$service, $out1, $code1);
+    if (!$code1 && !$code2)
+      flash('success', $service.' '.T_('succefully disabled.'));
+    else
+      flash('error', $out1."\n".$out2);
+  } else flash('error', T_('Invalid service name.'));
+  redirect_to('/tools/monitor');
 }

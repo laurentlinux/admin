@@ -85,11 +85,12 @@
 					<div class="entityInfo" style="margin-left: 3px; float: right;">
 						<div style="text-align: right">
 							<a title="<?php echo T_('Log') ?>" class="btn btn-small disabled"><i class="icon-list-alt"></i> <?php echo T_('Log') ?></a>
-							<?php if (!$running) { ?>
-							<a title="<?php echo T_('Activate') ?>" class="btn btn-small disabled"><i class="icon-ok-sign"></i> <?php echo T_('Activate') ?></a>
+							<?php if (array_key_exists($service, $services)) {
+							if (!$running) { ?>
+							<a title="<?php echo T_('Activate') ?>" class="btn btn-small" href="/tools/activate/<?php echo $services[$service] ?>"><i class="icon-ok-sign"></i> <?php echo T_('Activate') ?></a>
 							<?php } else { ?>
-							<a title="<?php echo T_('Deactivate') ?>" class="btn btn-small disabled"><i class="icon-remove-sign"></i> <?php echo T_('Deactivate') ?></a>
-							<?php } ?>
+							<a title="<?php echo T_('Deactivate') ?>" class="btn btn-small" href="/tools/deactivate/<?php echo $services[$service] ?>"><i class="icon-remove-sign"></i> <?php echo T_('Deactivate') ?></a>
+							<?php }} ?>
 						</div>
 					</div>
 				</div>

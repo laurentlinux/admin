@@ -72,4 +72,5 @@ dispatch('/tools/upgrade/number', 'getUpgradeNumber');
 dispatch('/tools/upgrade', 'upgradeConfirm');
 dispatch('/tools/upgrade/packages', 'upgradeAjax');
 dispatch_post('/tools/upgrade/packages', 'upgradeAjax');
-
+dispatch('/tools/activate/:service', 'activateService');
+dispatch('/tools/deactivate/:service', 'deactivateService');
