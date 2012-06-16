@@ -255,14 +255,14 @@ function upgradeAjax () {
  */
 function activateService ($service) {
   $service = htmlspecialchars($service);
-  if (!preg_match('/\s/', $service)) {
+  if (!preg_match("#\s#", $service)) {
     exec('sudo yunohost enable-service '.$service, $out2, $code2);
     exec('sudo yunohost start-service '.$service, $out1, $code1);
     if (!$code1 && !$code2)
       flash('success', $service.' '.T_('succefully enabled.'));
     else
       flash('error', $out1."\n".$out2);
-  }
+  } else flash('error', T_('Invalid service name.'));
   redirect_to('/tools/monitor');
 }
 
@@ -271,7 +271,7 @@ function activateService ($service) {
  */
 function deactivateService ($service) {
   $service = htmlspecialchars($service);
-  if (!preg_match('/\s/', $service)) {
+  if (!preg_match("#\s#", $service)) {
     exec('sudo yunohost disable-service '.$service, $out2, $code2);
     exec('sudo yunohost stop-service '.$service, $out1, $code1);
     if (!$code1 && !$code2)
