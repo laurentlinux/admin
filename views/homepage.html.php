@@ -23,8 +23,19 @@
 
 <div class="row row-tab">
 	<div class="span6"> 
-		<div class="well">
-		    <h4><?php echo T_('Welcome :-)') ?></h4>
-	    </div>
+		<div class="center" style="padding: 20px;">
+      <img src="<?php echo PUBLIC_DIR ?>/img/logo-big.png">
+      <h3>YunoHost Beta 2</h3>
+      <br />
+      <p style="color: #666; font-style: italic">*le derp</p>
+    </div>
 	</div>
+  <div class="span6"> 
+    <div class="well">
+      <h4>Accès rapide:</h4>
+      <br />
+      <p><a class="btn btn-primary" href="http://apps.yayaya.fr">Application portal</a></p>
+      <p><a class="btn btn-primary" href="http://admin.yayaya.fr">Administration</a></p>
+    </div>
+  </div>
 </div>

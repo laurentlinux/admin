@@ -49,7 +49,7 @@
                     <p class="row">
                       <label class="span2 labeluser" for="domain"><?php echo T_('Domain') ?> <span style="color: red">*</span></label>
                       <select class="span3" style="" type="text" name="domain" id="domain">
-                      <?php $domain = exec('hostname -d'); ?>
+                      <?php $domain = $_SESSION['domain']; ?>
                       <option value="<?php echo $domain ?>"><?php echo $domain ?></option>
                       </select> 
                     </p>
