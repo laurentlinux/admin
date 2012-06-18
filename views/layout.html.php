@@ -56,9 +56,6 @@
           <a class="brand" href="/"><img src="<?php echo PUBLIC_DIR ?>/img/logo.png"></a>
           <div class="nav-collapse">
             <ul class="nav pull-right">
-              <li class="<?php echo ($tab == 'home') ? 'active' : '' ?>">
-                <a href="/"><i class="icon-home icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Home') ?></a>
-              </li>
               <li class="<?php echo ($tab == 'user') ? 'active' : '' ?>">
                 <a href="/user/list"><i class="icon-user icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Users') ?></a>
               </li>
@@ -142,7 +139,7 @@
       <hr>
 
       <footer>
-        <span><?php echo T_('Powered by') ?> <a href="http://yunohost.org/">YunoHost</a> (Beta) 
+        <span><?php echo T_('Powered by') ?> <a href="http://yunohost.org/">YunoHost</a> (Beta 2) 
           <div class="btn-group dropup pull-right">
             <button data-toggle="dropdown" class="btn btn-mini" style="height: 20px;"><i class="icon-flag"></i> <?php echo T_('Lang') ?></button>
             <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">

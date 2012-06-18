@@ -67,7 +67,7 @@ function addUser () {
 
   $ajax = isset($_POST['ajax']);
 
-  $domain = htmlspecialchars($_POST["domain"]);
+  $domain = $ajax ? $_SESSION['domain'] : htmlspecialchars($_POST["domain"]);
   $username = htmlspecialchars($_POST["username"]);
   $password = '{MD5}'.base64_encode(pack('H*',md5($_POST["password"])));
   $firstname = htmlspecialchars($_POST["firstname"]);
