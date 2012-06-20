@@ -1,8 +1,10 @@
-<?php 
+<?php
 
  /**
   *  YunoHost - Self-hosting for all
-  *  Copyright (C) 2012  Kload <kload@kload.fr>
+  *  Copyright (C) 2012
+  *     Kload <kload@kload.fr>
+  *     Guillaume DOTT <github@dott.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
   *  it under the terms of the GNU Affero General Public License as
@@ -20,8 +22,18 @@
 
  ?>
 
-<h3>Log : <?php echo($logFile) ?></h3>
-
+<h3 class="dropdown">Log : <?php echo($logFile) ?>
+<?php if(is_array($logFiles) && count($logFiles) > 1) : ?>
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+<?php foreach($logFiles as $file) : ?>
+              <li><a href="<?php echo url_for('tools', 'log', $service, $file); ?>"><?php echo $file; ?></a></li>
+<?php endforeach; ?>
+            </ul>
+<?php endif; ?>
+</h3>
 <div class="row">
 	<!-- <div class="span12"><?php // echo($logSize) ?> Ko</div> -->
 	<div class="span12">

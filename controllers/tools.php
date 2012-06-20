@@ -2,7 +2,9 @@
 
  /**
   *  YunoHost - Self-hosting for all
-  *  Copyright (C) 2012  Kload <kload@kload.fr>
+  *  Copyright (C) 2012
+  *     Kload <kload@kload.fr>
+  *     Guillaume DOTT <github@dott.fr>
   *
   *  This program is free software: you can redistribute it and/or modify
   *  it under the terms of the GNU Affero General Public License as
@@ -21,58 +23,74 @@
 /**
  * GET /tools/log/:service
  */
-function watchLog ($service = null) {
+function watchLog ($service = null, $logFile = null) {
   if(empty($service)) halt(NOT_FOUND, T_('Undefined service.'));
 
+  $logRoot = '/var/log/';
   switch ($service) {
-    case 'HTTP':
-      $logFile = '/var/log/apache2/error.log';
-      break;
-    
-    case 'XMPP':
-      $logFile = '/var/log/ejabberd/ejabberd.log';
-      break;
+  case 'HTTP':
+    $logRoot = '/var/log/apache2/';
+    $logFiles = array(
+      'access.log',
+      'admin-access.log',
+      'admin-error.log',
+      'apps-access.log',
+      'apps-error.log',
+      'error.log',
+      'other_vhosts_access.log',
+      'www-access.log',
+      'www-error.log'
+    );
+    break;
 
-    case 'SSH':
-      $logFile = '/var/log/auth.log';
-      break;
-    
-    case 'Mail':
-      $logFile = '/var/log/mail.err';
-      break;
+  case 'XMPP':
+    $logRoot = '/var/log/ejabberd/';
+    $logFiles = array('ejabberd.log');
+    break;
 
-    case 'MySQL':
-      $logFile = '/var/log/mysql.err';
-      break;
-    
-    case 'FTP':
-      $logFile = '/var/log/proftpd/proftpd.log';
-      break;  
+  case 'SSH':
+    $logFiles = array('auth.log');
+    break;
+
+  case 'Mail':
+    $logFiles = array('mail.err');
+    break;
+
+  case 'MySQL':
+    $logFiles = array('mysql.err');
+    break;
+
+  case 'FTP':
+    $logRoot = '/var/log/proftpd/';
+    $logFiles = array('proftpd.log');
+    break;
 
     // case 'Radicale':
     //   $logFile = '/var/log/?';
     //   break;
-    
-    default:
-      $logFile = false;
-      // $logFile = false;
-      break;
+
+  default:
+    $logFiles = false;
+    break;
   }
 
-  if ($logFile) {
-    exec('sudo yunohost cp-log '.$logFile);
-    $log = read_file('/tmp/readlog', 10);
-    // $logSize = round(filesize($logFile)/1024,2);
-    exec('sudo yunohost remove-log');
-  } else {
-    $log = array(T_('There is no log file for this service.'));
-  }
+  if (!is_array($logFiles) || count($logFiles) < 1) halt(NOT_FOUND, T_('Undefined service.'));
+
+  $logFile = (!empty($logFile) ? $logFile : $logFiles[0]);
+  if(!in_array($logFile, $logFiles)) halt(NOT_FOUND, T_('Undefined log file'));
+
+  exec('sudo yunohost cp-log '.$logRoot.$logFile);
+  $log = read_file('/tmp/readlog', 10);
+  // $logSize = round(filesize($logFile)/1024,2);
+  exec('sudo yunohost remove-log');
 
   set('title', T_('Log reader'));
   set('log', $log);
   set('logFile', $logFile);
+  set('logFiles', $logFiles);
+  set('service', $service);
   // set('logSize', $logSize);
-  return render("log.html.php"); 
+  return render("log.html.php");
 }
 
 /**

@@ -62,7 +62,7 @@ dispatch_put('/user/password/:user', 'updatePasswordUser');
  * => controllers/tools.php
  */
 dispatch('/tools', 'tools');
-dispatch('/tools/log/:logFile', 'watchLog');
+dispatch('/tools/log/:service/:logFile', 'watchLog');
 dispatch('/tools/chat', 'getChat');
 dispatch('/tools/chat/enable', 'enableChat');
 dispatch('/tools/chat/disable', 'disableChat');
