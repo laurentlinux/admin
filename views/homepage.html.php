@@ -30,12 +30,6 @@
       <p style="color: #666; font-style: italic">*le derp</p>
     </div>
 	</div>
-  <div class="span6"> 
-    <div class="well">
-      <h4>Accès rapide:</h4>
-      <br />
-      <p><a class="btn btn-primary" href="http://apps.yayaya.fr">Application portal</a></p>
-      <p><a class="btn btn-primary" href="http://admin.yayaya.fr">Administration</a></p>
-    </div>
+  <div class="span6">
   </div>
 </div>
