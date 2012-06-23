@@ -277,7 +277,7 @@ function activateService ($service) {
     exec('sudo yunohost enable-service '.$service, $out2, $code2);
     exec('sudo yunohost start-service '.$service, $out1, $code1);
     if (!$code1 && !$code2)
-      flash('success', $service.' '.T_('succefully enabled.'));
+      flash('success', $service.' '.T_('successfully enabled.'));
     else
       flash('error', $out1."\n".$out2);
   } else flash('error', T_('Invalid service name.'));
@@ -293,7 +293,7 @@ function deactivateService ($service) {
     exec('sudo yunohost disable-service '.$service, $out2, $code2);
     exec('sudo yunohost stop-service '.$service, $out1, $code1);
     if (!$code1 && !$code2)
-      flash('success', $service.' '.T_('succefully disabled.'));
+      flash('success', $service.' '.T_('successfully disabled.'));
     else
       flash('error', $out1."\n".$out2);
   } else flash('error', T_('Invalid service name.'));

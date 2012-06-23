@@ -72,7 +72,7 @@ function updateDomains () {
   } else flash('error', T_('You must enter at least one domain.'));
 
   if ($error) flash('error', T_('A problem occured on domain operations.'));
-  else flash('success', T_('Domains succefully updated.'));
+  else flash('success', T_('Domains successfully updated.'));
 
   redirect_to('/domain/list');
 }
