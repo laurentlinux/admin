@@ -189,6 +189,18 @@ jQuery(document).ready(function() {
 	    });
 	});
 
+        if (typeof operationAjaxUrl != 'undefined') {
+          jQuery.get(operationAjaxUrl,
+          function(data) {
+            jQuery("#operation-result").html("<pre>"+data.result+"</pre>");
+            if(data.errorCode == 0) {
+              jQuery("#operation-success").show();
+            }
+            else {
+              jQuery("#operation-fail").show();
+            }
+          });
+        }
 });
 
 

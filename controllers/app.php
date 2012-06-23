@@ -74,42 +74,52 @@ function listApps () {
  * GET /app/:operation/:app
  */
 function operateApp ($operation, $app) {
+  $available_operations = array('install', 'remove', 'update');
 
   $app = htmlspecialchars($app);
   $operation = htmlspecialchars($operation);
   $errorCode = 0;
   $trOperation = T_('Invalid operation');
 
+  if(!in_array($operation, $available_operations)) halt(NOT_FOUND, T_('Undefined operation.'));
+
+  set('app', $app);
+  set('operation', $operation);
+  set('title', ucfirst($operation).' '.ucfirst($app));
+  return render("appOperation.html.php");
+}
+
+function operateAppAjax ($operation, $app) {
+  $available_operations = array('install', 'remove', 'update');
+
+  $app = htmlspecialchars($app);
+  $operation = htmlspecialchars($operation);
+  $errorCode = 0;
+
+  if(!in_array($operation, $available_operations)) halt(NOT_FOUND, T_('Undefined operation.'));
+
   ob_start();
   switch ($operation) {
     case 'install':
-      $trOperation = T_('Install');
       passthru('sudo yunohost install-app '.$app, $errorCode);
       break;
 
     case 'remove':
-      $trOperation = T_('Remove');
       passthru('sudo yunohost remove-app '.$app, $errorCode);
       break;
 
     case 'update':
-      $trOperation = T_('Update');
       passthru('sudo yunohost update-app '.$app, $errorCode);
       break;
 
     default:
       echo T_('Invalid operation');
       break;
-  } 
+  }
 
   $result = ob_get_contents();
   ob_end_clean();
 
-  $result = explode("\n", $result);
-
-  set('result', $result);
-  set('app', $app);
-  set('errorCode', $errorCode);
-  set('title', $trOperation.' '.ucfirst($app));
-  return render("appOperation.html.php");
+  $json = array('result' => $result, 'errorCode' => $errorCode);
+  return json($json);
 }

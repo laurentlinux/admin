@@ -38,6 +38,8 @@
   <!-- LESS for development -->
 	<!-- <link rel="stylesheet/less" href="<?php echo PUBLIC_DIR ?>/less/style.less"> -->
 	<script src="<?php echo PUBLIC_DIR ?>/js/libs/less-1.2.1.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
   <!-- CSS for production -->
   <link media="all" type="text/css" href="<?php echo PUBLIC_DIR ?>/css/style.css" rel="stylesheet">
 	<script src="<?php echo PUBLIC_DIR ?>/js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
@@ -163,8 +165,6 @@
     "sInfoFiltered": "<?php echo T_('(filtered from _MAX_ total entries)'); ?>",
   };
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 <script src="<?php echo PUBLIC_DIR ?>/js/libs/jquery.dataTables.min.js"></script>
 
 <!-- scripts concatenated and minified via ant build script-->

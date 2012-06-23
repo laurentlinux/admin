@@ -41,6 +41,7 @@ dispatch_put('/domain/update', 'updateDomains');
 dispatch('/app', 'apps');
 dispatch('/app/list', 'listApps');
 dispatch('/app/:operation/:app', 'operateApp');
+dispatch('/app/:operation/:app/ajax', 'operateAppAjax');
 
 /**
  * => controllers/user.php

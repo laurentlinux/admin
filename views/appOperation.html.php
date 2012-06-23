@@ -21,16 +21,13 @@
  ?>
  <div class="row row-tab">
 	<div class="span6 well">
-		<?php foreach ($result as $line) { ?>
-			<div><?php echo $line ?></div>
-		<?php } ?>
-		<br />
-		<?php if (!$errorCode) { ?>
-			<div style="color: green"><strong><?php echo T_('Success !') ?></strong></div>
-		<?php } else { ?>
-			<div style="color: red"><strong><?php echo T_('Failed !') ?></strong></div>
-		<?php } ?>
+			<div id="operation-result"><img src="/public/img/ajax-loader.gif" /></div>
+			<div id="operation-success" style="color: green; display: none;"><strong><?php echo T_('Success !') ?></strong></div>
+			<div id="operation-fail" style="color: red; display: none;"><strong><?php echo T_('Failed !') ?></strong></div>
 		<div style="clear: both; margin-top: 20px;"></div>
 		<a class="btn btn-primary" href="/app/list"><i class="icon-chevron-left icon-white" style="margin: 2px 6px 0 0"></i><?php echo T_('Back') ?></a>
 	</div>
 </div>
+<script type="text/javascript">
+var operationAjaxUrl = '<?php echo url_for('app', $operation, $app, 'ajax'); ?>';
+</script>
