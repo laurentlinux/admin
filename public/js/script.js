@@ -201,6 +201,19 @@ jQuery(document).ready(function() {
             }
           });
         }
+
+        jQuery(".install-confirm, .delete-confirm").click(function(event) {
+          event.preventDefault();
+          var operation = $(this).attr("data-operation");
+          var app = $(this).attr("data-app");
+
+          jQuery("#confirm-modal .hide").hide();
+          jQuery("#confirm-modal ."+operation+"-text").show();
+          jQuery("#confirm-modal .appname").text(app);
+
+          jQuery("#confirm-link").attr('href', $(this).attr('href'));
+          jQuery("#confirm-modal").modal();
+        });
 });
 
 
