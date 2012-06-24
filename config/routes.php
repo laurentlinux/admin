@@ -41,6 +41,7 @@ dispatch_put('/domain/update', 'updateDomains');
 dispatch('/app', 'apps');
 dispatch('/app/list', 'listApps');
 dispatch('/app/:operation/:app', 'operateApp');
+dispatch('/app/:operation/:app/ajax', 'operateAppAjax');
 
 /**
  * => controllers/user.php
@@ -62,7 +63,7 @@ dispatch_put('/user/password/:user', 'updatePasswordUser');
  * => controllers/tools.php
  */
 dispatch('/tools', 'tools');
-dispatch('/tools/log/:logFile', 'watchLog');
+dispatch('/tools/log/:service/:logFile', 'watchLog');
 dispatch('/tools/chat', 'getChat');
 dispatch('/tools/chat/enable', 'enableChat');
 dispatch('/tools/chat/disable', 'disableChat');

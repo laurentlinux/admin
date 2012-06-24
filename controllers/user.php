@@ -87,7 +87,7 @@ function addUser () {
     if ($ldap->saveUser()) 
     {
       if ($admin) $ldap->grantAdmin($username);
-      flash('success', T_('User succefully created.'));
+      flash('success', T_('User successfully created.'));
 
       $welcomeMessage = T_('Welcome aboard! Here is your login and password to connect to your apps.');
       $welcomeMessage2 = T_('If you want to change your password, click on the link below:');
@@ -151,7 +151,7 @@ function deleteUser () {
   if ('admin' === $ldap->getUserDescription())
     $ldap->revokeAdmin($uid);
   if ($ldap->deleteUser(array('cn' => $ldap->getUserCn())))
-    flash('success', T_('User succefully deleted.'));
+    flash('success', T_('User successfully deleted.'));
   else
     flash('error', T_('An error occured on user deletion.'));
 
@@ -213,7 +213,7 @@ function updateUser ($uid = null) {
   }
 
   if ($ldap->saveUser())
-    flash('success', T_('User succefully updated.'));
+    flash('success', T_('User successfully updated.'));
   else
     flash('error', T_('An error occured on user update.'));
 

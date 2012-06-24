@@ -34,7 +34,7 @@
               </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
-                  <h4><?php echo T_('YunoHost has been succefully installed :-)') ?></h4>
+                  <h4><?php echo T_('YunoHost has been successfully installed :-)') ?></h4>
                   <br />
                   <p><?php echo T_('Now you have to complete the 3 steps above, and you will be ready to go!') ?></p>
 
