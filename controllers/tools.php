@@ -218,7 +218,7 @@ function tasksManager() {
  */
 function getUpgradeNumber () {
   exec('sudo yunohost check-repo');
-  $number = exec('sudo yunohost upgradable-pkgs');
+  $number = exec('sudo yunohost upgradable-pkgs number');
   $_SESSION['upgradeNumber'] = $number;
 
   if ($number) {
@@ -242,13 +242,14 @@ function getUpgradeNumber () {
  * GET /tools/upgrade
  */
 function upgradeConfirm () {
-  if (!isset($_SESSION['upgradeNumber'])) {
-    exec('sudo yunohost check-repo');
-    $number = exec('sudo yunohost upgradable-pkgs');
-    $_SESSION['upgradeNumber'] = $number;
-  }
+
+  exec('sudo yunohost check-repo');
+  $number = exec('sudo yunohost upgradable-pkgs number');
+  $list = explode(' ', exec('sudo yunohost upgradable-pkgs list'));
+  $_SESSION['upgradeNumber'] = $number;
 
   set('number', $_SESSION['upgradeNumber']);
+  set('list', $list);
   set('title', T_('System upgrade'));
   return render("upgradeConfirm.html.php");
 }
@@ -264,7 +265,7 @@ function upgradeAjax () {
   ob_end_clean();
 
   $result = str_replace("\n", "<br />", $result);
-  if ($errorCode) $_SESSION['upgradeNumber'] = 0;
+  if (!$errorCode) $_SESSION['upgradeNumber'] = 0;
   return $result;
 }
 
