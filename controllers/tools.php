@@ -53,7 +53,12 @@ function watchLog ($service = null, $logFile = null) {
     break;
 
   case 'Mail':
-    $logFiles = array('mail.err');
+    $logFiles = array(
+      'mail.log',
+      'mail.info',
+      'mail.warn',
+      'mail.err',
+    );
     break;
 
   case 'MySQL':
@@ -65,9 +70,9 @@ function watchLog ($service = null, $logFile = null) {
     $logFiles = array('proftpd.log');
     break;
 
-    // case 'Radicale':
-    //   $logFile = '/var/log/?';
-    //   break;
+  case 'Radicale':
+    $logFile = '/var/log/radicale';
+    break;
 
   default:
     $logFiles = false;
