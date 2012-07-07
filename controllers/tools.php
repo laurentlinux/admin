@@ -71,7 +71,7 @@ function watchLog ($service = null, $logFile = null) {
     break;
 
   case 'Radicale':
-    $logFile = '/var/log/radicale';
+    $logFile = array('radicale');
     break;
 
   default:
