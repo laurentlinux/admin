@@ -62,7 +62,7 @@ msgstr "Installer"
 #: views/layout.html.php:60
 #: views/layout.html.php:113
 msgid "Home"
-msgstr "Acceuil"
+msgstr "Accueil"
 
 #: views/layout.html.php:63
 #: views/layout.html.php:114
